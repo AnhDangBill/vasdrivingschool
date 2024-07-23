@@ -7,306 +7,7 @@
     <title data-lang="en">VAS Driving School</title>
     <title data-lang="vi" style="display: none;">Trường Dạy Lái Xe VAS</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(90deg, #C85107, #FF8C00);
-            color: white;
-            padding: 20px 30px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        header nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        header nav ul li {
-            margin-left: 30px;
-        }
-
-        header nav ul li:first-child {
-            margin-left: 0;
-        }
-
-        header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
-
-        header nav ul li a:hover {
-            color: #FFD700;
-        }
-
-        footer {
-            background: linear-gradient(90deg, #C85107, #FF8C00);
-            color: white;
-            text-align: center;
-            padding: 20px 30px;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-            margin-top: auto;
-        }
-
-        button {
-            background-color: #FF8C00;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #FFD700;
-            transform: translateY(-3px);
-        }
-
-        .logo {
-            flex: 1;
-            text-align: left;
-        }
-
-        .title {
-            flex: 2;
-            text-align: center;
-        }
-
-        .title h1 {
-            transform: translateY(-10px);
-            margin: 0;
-        }
-
-        nav {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .service {
-            margin-bottom: 30px;
-        }
-
-        .language-switcher {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-        }
-
-        .language-switcher button {
-            margin-left: 10px;
-        }
-
-        main {
-            padding: 30px;
-            text-align: center;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card {
-            background: #56585A;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            margin: 20px;
-            width: 85%;
-            max-width: 1000px;
-            transition: transform 0.3s ease;
-            display: flex;
-            justify-content: center;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
-            width: 95%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .card img:hover {
-            transform: scale(1.05);
-        }
-
-        .section {
-            margin: 20px 0;
-        }
-
-        .section h2 {
-            color: #C85107;
-        }
-
-        .section p {
-            margin: 10px 0;
-        }
-
-        .upcoming-classes,
-        .special-offers,
-        .news,
-        .gallery,
-        .faq {
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 800px;
-        }
-
-        .gallery img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .faq h3 {
-            cursor: pointer;
-            margin: 0;
-        }
-
-        .faq p {
-            display: none;
-            margin: 10px 0 0 0;
-        }
-
-        .faq h3:hover {
-            color: #FF8C00;
-        }
-
-        .welcome-section {
-            background: #FF8C00;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 800px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .welcome-section:hover {
-            transform: translateY(-10px);
-        }
-
-        .welcome-section h2 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        .welcome-section p {
-            font-size: 18px;
-        }
-
-        .form-container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            width: 85%;
-            max-width: 600px;
-        }
-
-        .form-container h2 {
-            color: #C85107;
-        }
-
-        .form-container label {
-            display: block;
-            margin-top: 10px;
-            text-align: left;
-        }
-
-        .form-container input,
-        .form-container select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .form-container button {
-            margin-top: 20px;
-        }
-
-
-
-
-
-        /* Add this to your existing CSS */
-        .logo img {
-            animation: flip 12s linear infinite;
-        }
-
-        @keyframes flip {
-
-            0%,
-            16.67%,
-            100% {
-                transform: rotateY(0deg);
-            }
-
-            8.33% {
-                transform: rotateY(180deg);
-            }
-        }
-
-        .message {
-            background: #FF8C00;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 600px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            font-size: 16px;
-        }
-
-        .message:hover {
-            transform: translateY(-5px);
-        }
-
-
-
-
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+    <link href="mainstyle.css" rel="stylesheet">
 
     <script>
         function switchLanguage(lang) {
@@ -320,44 +21,63 @@
             });
             document.title = document.querySelector('title[data-lang="' + lang + '"]').textContent;
         }
-
-        function updateForm() {
-            const program = document.getElementById('program').value;
-            const dateSection = document.getElementById('class-dates');
-            const datetimeSection = document.getElementById('datetime');
-
-            if (program === '36-hour-class') {
-                dateSection.style.display = 'block';
-                datetimeSection.style.display = 'none';
-            } else {
-                dateSection.style.display = 'none';
-                datetimeSection.style.display = 'block';
-            }
-        }
-
-        function handleSubmit(event) {
-            event.preventDefault();
-            const program = document.getElementById('program').value;
-            let paymentUrl = '';
-
-            if (program === '36-hour-class') {
-                paymentUrl = 'https://square.link/u/l9ywQ4g2';
-            } else if (program === 'driver-practice') {
-                paymentUrl = 'https://square.link/u/aJWD4fta';
-            } else if (program === 'car-rental') {
-                paymentUrl = 'https://square.link/u/HIHBypy2';
-            }
-
-            window.location.href = paymentUrl;
-        }
     </script>
+    <style>
+        .course-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .course {
+            width: 300px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .course img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .course h3 {
+            font-size: 20px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .course a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            background-color: #FF8C00;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .course a:hover {
+            background-color: #FFD700;
+        }
+
+        .course:hover {
+            transform: translateY(-10px);
+        }
+    </style>
 </head>
 
 <body onload="switchLanguage('en');">
     <header>
         <div class="logo">
             <a href="index.html">
-            <img src="logo.jpg" alt="VAS Driving School Logo" style="height: 50px;">
+                <img src="logo.jpg" alt="VAS Driving School Logo" style="height: 50px;">
             </a>
         </div>
         <div class="title">
@@ -384,69 +104,59 @@
         </div>
     </header>
     <main>
-        <div class="form-container">
-            <h2 data-lang="en">Sign Up for a Program</h2>
-            <h2 data-lang="vi" style="display: none;">Đăng Ký Chương Trình</h2>
-            <form onsubmit="handleSubmit(event)">
-                <label for="name" data-lang="en">Name</label>
-                <label for="name" data-lang="vi" style="display: none;">Tên</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email" data-lang="en">Email</label>
-                <label for="email" data-lang="vi" style="display: none;">Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="phone" data-lang="en">Phone</label>
-                <label for="phone" data-lang="vi" style="display: none;">Điện Thoại</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <label for="program" data-lang="en">Select Program</label>
-                <label for="program" data-lang="vi" style="display: none;">Chọn Chương Trình</label>
-                <select id="program" name="program" onchange="updateForm()" required>
-                    <option value="" disabled selected>Select your option</option>
-                    <option value="36-hour-class">Full 36-Hour Class</option>
-                    <option value="driver-practice">Driver Practice</option>
-                    <option value="car-rental">Car Rental for Driving Test</option>
-                </select>
-
-                <div id="class-dates" style="display: none;">
-                    <label for="class-date" data-lang="en">Select Class Date</label>
-                    <label for="class-date" data-lang="vi" style="display: none;">Chọn Ngày Lớp Học</label>
-                    <select id="class-date" name="class-date">
-                        <option value="2024-06-24">June 24, 2024</option>
-                        <option value="2024-07-08">July 08, 2024</option>
-                        <option value="2024-07-22">July 22, 2024</option>
-                        <option value="2024-08-05">August 05, 2024</option>
-                        <option value="2024-08-19">August 19, 2024</option>
-                    </select>
+        <div class="form-container" data-lang="en">
+            <h2>Sign Up for a Program</h2>
+            <p>Please click on the program you want to sign up for. After payment, call the school to specify your preferred date.</p>
+            <div class="course-container">
+                <div class="course">
+                    <h3>Full 36-Hour Class</h3>
+                    <a href="https://square.link/u/l9ywQ4g2" target="_blank">Sign Up Now</a>
                 </div>
-
-                <div id="datetime" style="display: none;">
-                    <label for="date" data-lang="en">Select Date</label>
-                    <label for="date" data-lang="vi" style="display: none;">Chọn Ngày</label>
-                    <input type="date" id="date" name="date">
-
-                    <label for="time" data-lang="en">Select Time</label>
-                    <label for="time" data-lang="vi" style="display: none;">Chọn Giờ</label>
-                    <input type="time" id="time" name="time">
+                <div class="course">
+                    <h3>3 Hours Drug and Alcohol Class</h3>
+                    <a href="https://square.link/u/HIHBypy2" target="_blank">Sign Up Now</a>
                 </div>
-
-                <button type="submit" data-lang="en">Submit</button>
-                <button type="submit" data-lang="vi" style="display: none;">Gửi</button>
-            </form>
+                <div class="course">
+                    <h3>Driver Practice</h3>
+                    <a href="https://square.link/u/aJWD4fta" target="_blank">Sign Up Now</a>
+                </div>
+                <div class="course">
+                    <h3>Car Rental for Driving Test</h3>
+                    <a href="https://square.link/u/HIHBypy2" target="_blank">Sign Up Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-container" data-lang="vi" style="display: none;">
+            <h2>Đăng Ký Chương Trình</h2>
+            <p>Vui lòng nhấp vào chương trình bạn muốn đăng ký. Sau khi thanh toán, hãy gọi cho trường để chỉ định ngày bạn muốn học.</p>
+            <div class="course-container">
+                <div class="course">
+                    <h3>Lớp Học 36 Giờ Đầy Đủ</h3>
+                    <a href="https://square.link/u/l9ywQ4g2" target="_blank">Đăng Ký Ngay</a>
+                </div>
+                <div class="course">
+                    <h3>Lớp 3 Giờ về Ma Túy và Rượu</h3>
+                    <a href="https://square.link/u/HIHBypy2" target="_blank">Đăng Ký Ngay</a>
+                </div>
+                <div class="course">
+                    <h3>Thực Hành Lái Xe</h3>
+                    <a href="https://square.link/u/aJWD4fta" target="_blank">Đăng Ký Ngay</a>
+                </div>
+                <div class="course">
+                    <h3>Cho Thuê Xe Thi Lái</h3>
+                    <a href="https://square.link/u/HIHBypy2" target="_blank">Đăng Ký Ngay</a>
+                </div>
+            </div>
         </div>
         <div class="message" data-lang="en">
             <p>Please visit our office any day before your class starts to sign the required forms.</p>
         </div>
         <div class="message" data-lang="vi" style="display: none;">
-            <p>Vui lòng đến văn phòng của chúng tôi bất kỳ ngày nào trước khi lớp học bắt đầu để ký các biểu mẫu cần
-                thiết.</p>
+            <p>Vui lòng đến văn phòng của chúng tôi bất kỳ ngày nào trước khi lớp học bắt đầu để ký các biểu mẫu cần thiết.</p>
         </div>
-
     </main>
     <footer>
-        <p>Contact us: <a href="mailto:info@vasdrivingschool.net">info@vasdrivingschool.net</a> | 12621 Old Columbia
-            Pike, Silver Spring, MD 20904 | Phone: 240-688-5597</p>
+        <p>Contact us: <a href="mailto:info@vasdrivingschool.net">info@vasdrivingschool.net</a> | 12621 Old Columbia Pike, Silver Spring, MD 20904 | Phone: 240-688-5597</p>
     </footer>
 </body>
 
