@@ -7,266 +7,11 @@
     <title data-lang="en">VAS Driving School</title>
     <title data-lang="vi" style="display: none;">Trường Dạy Lái Xe VAS</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(90deg, #C85107, #FF8C00);
-            color: white;
-            padding: 20px 30px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        header nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        header nav ul li {
-            margin-left: 30px;
-        }
-
-        header nav ul li:first-child {
-            margin-left: 0;
-        }
-
-        header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
-
-        header nav ul li a:hover {
-            color: #FFD700;
-        }
-
-        footer {
-            background: linear-gradient(90deg, #C85107, #FF8C00);
-            color: white;
-            text-align: center;
-            padding: 20px 30px;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-            margin-top: auto;
-        }
-
-        button {
-            background-color: #FF8C00;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #FFD700;
-            transform: translateY(-3px);
-        }
-
-        .logo {
-            flex: 1;
-            text-align: left;
-        }
-
-        .title {
-            flex: 2;
-            text-align: center;
-        }
-
-        .title h1 {
-            transform: translateY(-10px);
-            margin: 0;
-        }
-
-        nav {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .service {
-            margin-bottom: 30px;
-        }
-
-        .language-switcher {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-        }
-
-        .language-switcher button {
-            margin-left: 10px;
-        }
-
-        main {
-            padding: 30px;
-            text-align: center;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card {
-            background: #56585A;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            margin: 20px;
-            width: 85%;
-            max-width: 1000px;
-            transition: transform 0.3s ease;
-            display: flex;
-            justify-content: center;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
-            width: 95%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .card img:hover {
-            transform: scale(1.05);
-        }
-
-        .section {
-            margin: 20px 0;
-        }
-
-        .section h2 {
-            color: #C85107;
-        }
-
-        .section p {
-            margin: 10px 0;
-        }
-
-        .upcoming-classes,
-        .special-offers,
-        .news,
-        .gallery,
-        .faq {
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 800px;
-        }
-
-        .gallery img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .faq h3 {
-            cursor: pointer;
-            margin: 0;
-        }
-
-        .faq p {
-            display: none;
-            margin: 10px 0 0 0;
-        }
-
-        .faq h3:hover {
-            color: #FF8C00;
-        }
-
-        .welcome-section {
-            background: #FF8C00;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 800px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .welcome-section:hover {
-            transform: translateY(-10px);
-        }
-
-        .welcome-section h2 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        .welcome-section p {
-            font-size: 18px;
-        }
-
-
-        /* Add this to your existing CSS */
-        .logo img {
-            animation: flip 12s linear infinite;
-        }
-
-        @keyframes flip {
-
-            0%,
-            16.67%,
-            100% {
-                transform: rotateY(0deg);
-            }
-
-            8.33% {
-                transform: rotateY(180deg);
-            }
-        }
-
-
-
-
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="mainstyle.css" rel="stylesheet">
     <script>
-        function switchLanguage(lang) {
-            var elements = document.querySelectorAll('[data-lang]');
-            elements.forEach(element => {
-                element.style.display = 'none';
-            });
-            var selectedLangElements = document.querySelectorAll('[data-lang="' + lang + '"]');
-            selectedLangElements.forEach(element => {
-                element.style.display = 'block';
-            });
-            document.title = document.querySelector('title[data-lang="' + lang + '"]').textContent;
-        }
 
+        // Toggle FAQ visibility
         function toggleFAQ(event) {
             const faq = event.currentTarget;
             const answer = faq.nextElementSibling;
@@ -278,9 +23,62 @@
             }
         }
 
+        // Event listeners for FAQ and modal
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.faq h3').forEach(faq => {
                 faq.addEventListener('click', toggleFAQ);
+            });
+
+            // Show the modal after 5 seconds
+            setTimeout(() => {
+                var modal = document.getElementById('myModal');
+                var span = document.getElementsByClassName('close')[0];
+
+                modal.style.display = 'block';
+
+                span.onclick = function () {
+                    modal.style.display = 'none';
+                }
+
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                }
+            }, 5000);
+        });
+        function switchLanguage(lang) {
+            // Store the language preference in local storage
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Apply the language setting to the page
+            var elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                element.style.display = 'none';
+            });
+            var selectedLangElements = document.querySelectorAll('[data-lang="' + lang + '"]');
+            selectedLangElements.forEach(element => {
+                element.style.display = 'block';
+            });
+            document.title = document.querySelector('title[data-lang="' + lang + '"]').textContent;
+        }
+
+        function applyStoredLanguage() {
+            // Get the preferred language from local storage
+            var preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            switchLanguage(preferredLanguage);
+        }
+
+        // Apply the stored language when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            applyStoredLanguage();
+
+            // Add event listeners for language switch buttons
+            document.querySelectorAll('.language-switcher button').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    var lang = event.target.getAttribute('onclick').split("'")[1];
+                    switchLanguage(lang);
+                });
             });
         });
     </script>
@@ -290,7 +88,7 @@
     <header>
         <div class="logo">
             <a href="index.html">
-            <img src="logo.jpg" alt="VAS Driving School Logo" style="height: 50px;">
+                <img src="logo.jpg" alt="VAS Driving School Logo" style="height: 50px;">
             </a>
         </div>
         <div class="title">
@@ -319,7 +117,7 @@
     <main>
         <section class="section">
             <div class="service" data-lang="en">
-                <h2>Full 36-Hour Class</h2>
+                <h2><i class="fas fa-calendar-alt"></i> Full 36-Hour Class</h2>
                 <p>30 hours of classroom instruction and 6 hours of behind-the-wheel training. Cost: $350.</p>
                 <ul>
                     <li>Comprehensive curriculum covering all aspects of safe driving</li>
@@ -330,7 +128,7 @@
                 <button onclick="window.location.href='signup.html'">Sign Up Now</button>
             </div>
             <div class="service" data-lang="vi" style="display: none;">
-                <h2>Lớp Học 36 Giờ Đầy Đủ</h2>
+                <h2><i class="fas fa-calendar-alt"></i> Lớp Học 36 Giờ Đầy Đủ</h2>
                 <p>30 giờ học trên lớp và 6 giờ học lái xe. Chi phí: $350.</p>
                 <ul>
                     <li>Chương trình giảng dạy toàn diện bao gồm mọi khía cạnh của việc lái xe an toàn</li>
@@ -341,7 +139,29 @@
                 <button onclick="window.location.href='signup.html'">Đăng Ký Ngay</button>
             </div>
             <div class="service" data-lang="en">
-                <h2>Driver Practice</h2>
+                <h2><i class="fas fa-hourglass-half"></i> 3 Hours Drug and Alcohol Class</h2>
+                <p>Required class for new drivers. Cost: $150.</p>
+                <ul>
+                    <li>Understanding the effects of drugs and alcohol on driving</li>
+                    <li>Recognizing signs of impairment</li>
+                    <li>Strategies for safe driving</li>
+                    <li>Certification provided upon completion</li>
+                </ul>
+                <button onclick="window.location.href='signup.html'">Sign Up Now</button>
+            </div>
+            <div class="service" data-lang="vi" style="display: none;">
+                <h2><i class="fas fa-hourglass-half"></i> Lớp 3 Giờ về Ma Túy và Rượu</h2>
+                <p>Lớp học bắt buộc cho người lái xe mới. Chi phí: $150.</p>
+                <ul>
+                    <li>Hiểu biết về tác động của ma túy và rượu khi lái xe</li>
+                    <li>Nhận biết dấu hiệu suy giảm</li>
+                    <li>Chiến lược lái xe an toàn</li>
+                    <li>Cấp giấy chứng nhận sau khi hoàn thành</li>
+                </ul>
+                <button onclick="window.location.href='signup.html'">Đăng Ký Ngay</button>
+            </div>
+            <div class="service" data-lang="en">
+                <h2><i class="fas fa-car"></i> Driver Practice</h2>
                 <p>Flexible hours depending on the customer's needs. Minimum of 2 hours per session. Cost: $150 per session.</p>
                 <ul>
                     <li>One-on-one driving practice with a certified instructor</li>
@@ -352,7 +172,7 @@
                 <button onclick="window.location.href='signup.html'">Sign Up Now</button>
             </div>
             <div class="service" data-lang="vi" style="display: none;">
-                <h2>Thực Hành Lái Xe</h2>
+                <h2><i class="fas fa-car"></i> Thực Hành Lái Xe</h2>
                 <p>Giờ giấc linh hoạt tùy theo nhu cầu của khách hàng. Tối thiểu 2 giờ mỗi buổi. Chi phí: $150 mỗi buổi.</p>
                 <ul>
                     <li>Thực hành lái xe một kèm một với giảng viên được chứng nhận</li>
@@ -363,7 +183,7 @@
                 <button onclick="window.location.href='signup.html'">Đăng Ký Ngay</button>
             </div>
             <div class="service" data-lang="en">
-                <h2>Car Rental for Driving Test</h2>
+                <h2><i class="fas fa-key"></i> Car Rental for Driving Test</h2>
                 <p>Car rental available for driving tests. Price varies based on distance. Cost: Starting at $100.</p>
                 <ul>
                     <li>Well-maintained vehicles ready for driving tests</li>
@@ -374,7 +194,7 @@
                 <button onclick="window.location.href='signup.html'">Sign Up Now</button>
             </div>
             <div class="service" data-lang="vi" style="display: none;">
-                <h2>Cho Thuê Xe Thi Lái</h2>
+                <h2><i class="fas fa-key"></i> Cho Thuê Xe Thi Lái</h2>
                 <p>Cho thuê xe để thi lái. Giá cả thay đổi tùy theo khoảng cách. Chi phí: Bắt đầu từ $100.</p>
                 <ul>
                     <li>Phương tiện được bảo trì tốt sẵn sàng cho các kỳ thi lái xe</li>
@@ -387,9 +207,11 @@
         </section>
     </main>
     
-    
+
+
     <footer>
-        <p>Contact us: <a href="mailto:info@vasdrivingschool.net">info@vasdrivingschool.net</a> | 12621 Old Columbia Pike, Silver Spring, MD 20904 | Phone: 240-688-5597</p>
+        <p>Contact us: <a href="mailto:info@vasdrivingschool.net">info@vasdrivingschool.net</a> | 12621 Old Columbia
+            Pike, Silver Spring, MD 20904 | Phone: 240-688-5597</p>
     </footer>
 </body>
 
