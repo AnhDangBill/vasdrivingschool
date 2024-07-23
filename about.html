@@ -7,261 +7,12 @@
     <title data-lang="en">VAS Driving School</title>
     <title data-lang="vi" style="display: none;">Trường Dạy Lái Xe VAS</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            line-height: 1.6;
-        }
+    <link href="mainstyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-        header {
-            background: linear-gradient(90deg, #C85107, #FF8C00);
-            color: white;
-            padding: 20px 30px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        header nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        header nav ul li {
-            margin-left: 30px;
-        }
-
-        header nav ul li:first-child {
-            margin-left: 0;
-        }
-
-        header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
-
-        header nav ul li a:hover {
-            color: #FFD700;
-        }
-
-        footer {
-            background: linear-gradient(90deg, #C85107, #FF8C00);
-            color: white;
-            text-align: center;
-            padding: 20px 30px;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-            margin-top: auto;
-        }
-
-        button {
-            background-color: #FF8C00;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #FFD700;
-            transform: translateY(-3px);
-        }
-
-        .logo {
-            flex: 1;
-            text-align: left;
-        }
-
-        .title {
-            flex: 2;
-            text-align: center;
-        }
-
-        .title h1 {
-            transform: translateY(-10px);
-            margin: 0;
-        }
-
-        nav {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .service {
-            margin-bottom: 30px;
-        }
-
-        .language-switcher {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-        }
-
-        .language-switcher button {
-            margin-left: 10px;
-        }
-
-        main {
-            padding: 30px;
-            text-align: center;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card {
-            background: #56585A;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            margin: 20px;
-            width: 85%;
-            max-width: 1000px;
-            transition: transform 0.3s ease;
-            display: flex;
-            justify-content: center;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
-            width: 95%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .card img:hover {
-            transform: scale(1.05);
-        }
-
-        .section {
-            margin: 20px 0;
-        }
-
-        .section h2 {
-            color: #C85107;
-        }
-
-        .section p {
-            margin: 10px 0;
-        }
-
-        .upcoming-classes,
-        .special-offers,
-        .news,
-        .gallery,
-        .faq {
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 800px;
-        }
-
-        .gallery img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .faq h3 {
-            cursor: pointer;
-            margin: 0;
-        }
-
-        .faq p {
-            display: none;
-            margin: 10px 0 0 0;
-        }
-
-        .faq h3:hover {
-            color: #FF8C00;
-        }
-
-        .welcome-section {
-            background: #FF8C00;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 800px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .welcome-section:hover {
-            transform: translateY(-10px);
-        }
-
-        .welcome-section h2 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        .welcome-section p {
-            font-size: 18px;
-        }
-
-
-        /* Add this to your existing CSS */
-        .logo img {
-            animation: flip 12s linear infinite;
-        }
-
-        @keyframes flip {
-
-            0%,
-            16.67%,
-            100% {
-                transform: rotateY(0deg);
-            }
-
-            8.33% {
-                transform: rotateY(180deg);
-            }
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        
-    </style>
     <script>
-        function switchLanguage(lang) {
-            var elements = document.querySelectorAll('[data-lang]');
-            elements.forEach(element => {
-                element.style.display = 'none';
-            });
-            var selectedLangElements = document.querySelectorAll('[data-lang="' + lang + '"]');
-            selectedLangElements.forEach(element => {
-                element.style.display = 'block';
-            });
-            document.title = document.querySelector('title[data-lang="' + lang + '"]').textContent;
-        }
-
+        
+        // Toggle FAQ visibility
         function toggleFAQ(event) {
             const faq = event.currentTarget;
             const answer = faq.nextElementSibling;
@@ -273,9 +24,62 @@
             }
         }
 
+        // Event listeners for FAQ and modal
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.faq h3').forEach(faq => {
                 faq.addEventListener('click', toggleFAQ);
+            });
+
+            // Show the modal after 5 seconds
+            setTimeout(() => {
+                var modal = document.getElementById('myModal');
+                var span = document.getElementsByClassName('close')[0];
+
+                modal.style.display = 'block';
+
+                span.onclick = function () {
+                    modal.style.display = 'none';
+                }
+
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                }
+            }, 5000);
+        });
+        function switchLanguage(lang) {
+            // Store the language preference in local storage
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Apply the language setting to the page
+            var elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                element.style.display = 'none';
+            });
+            var selectedLangElements = document.querySelectorAll('[data-lang="' + lang + '"]');
+            selectedLangElements.forEach(element => {
+                element.style.display = 'block';
+            });
+            document.title = document.querySelector('title[data-lang="' + lang + '"]').textContent;
+        }
+
+        function applyStoredLanguage() {
+            // Get the preferred language from local storage
+            var preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            switchLanguage(preferredLanguage);
+        }
+
+        // Apply the stored language when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            applyStoredLanguage();
+
+            // Add event listeners for language switch buttons
+            document.querySelectorAll('.language-switcher button').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    var lang = event.target.getAttribute('onclick').split("'")[1];
+                    switchLanguage(lang);
+                });
             });
         });
     </script>
@@ -285,7 +89,7 @@
     <header>
         <div class="logo">
             <a href="index.html">
-            <img src="logo.jpg" alt="VAS Driving School Logo" style="height: 50px;">
+                <img src="logo.jpg" alt="VAS Driving School Logo" style="height: 50px;">
             </a>
         </div>
 
@@ -308,6 +112,7 @@
                 <li><a href="signup.html" data-lang="vi" style="display: none;">Đăng Ký</a></li>
             </ul>
         </nav>
+
         <div class="language-switcher">
             <button onclick="switchLanguage('en');">English</button>
             <button onclick="switchLanguage('vi');">Vietnamese</button>
@@ -324,7 +129,7 @@
             <p>Là trường dạy lái xe Mỹ gốc Việt đầu tiên trong khu vực, Trường Dạy Lái Xe VAS tự hào cung cấp dịch vụ giảng dạy chất lượng cao kết hợp an toàn, kỹ năng và tự tin trên đường. Các giáo viên của chúng tôi, với kinh nghiệm dày dặn, cam kết hỗ trợ mọi học viên từ người mới bắt đầu đến những người muốn cải thiện kỹ năng lái xe của mình.</p>
             <p>Được thành lập vào năm 2024, trường chúng tôi cam kết đảm bảo thành công của mỗi học viên, với các chương trình được thiết kế riêng biệt nhằm đáp ứng nhu cầu đặc thù của cộng đồng, tập trung vào cả lý thuyết và kỹ năng lái xe thực tế.</p>
         </section>
-        <section class="section">
+        <section class="section team-section">
             <div data-lang="en">
                 <h2 class="section-title">Our Team</h2>
                 <p>Our team of certified instructors brings a wealth of experience and dedication to each driving lesson. They are passionate about teaching and committed to the success of each student.</p>
@@ -334,7 +139,7 @@
                 <p>Đội ngũ giảng viên được chứng nhận của chúng tôi mang đến nhiều kinh nghiệm và sự tận tâm cho mỗi buổi học lái xe. Họ đam mê giảng dạy và cam kết với sự thành công của từng học viên.</p>
             </div>
         </section>
-        <section class="section">
+        <section class="section facilities-section">
             <div data-lang="en">
                 <h2 class="section-title">Our Facilities</h2>
                 <p>VAS Driving School boasts state-of-the-art facilities, including modern classrooms and well-maintained vehicles to ensure a comfortable and effective learning environment.</p>
@@ -344,6 +149,69 @@
                 <p>Trường Dạy Lái Xe VAS có cơ sở vật chất hiện đại, bao gồm các phòng học hiện đại và các phương tiện được bảo trì tốt để đảm bảo môi trường học tập thoải mái và hiệu quả.</p>
             </div>
         </section>
+
+        <div class="section student-success" data-lang="en">
+            <h2 class="section-title">Student Success Stories</h2>
+            <div class="success-story">
+                <img src="C:\Users\billy\OneDrive\Desktop\HBN.png" alt="Student 1">
+                <div class="story-content">
+                    <h3>Huy Bảo Nguyễn</h3>
+                    <p>Congratulations to Huy Bao Nguyen, one of the first students of VAS Driving School, for earning his driver's license! 🎉
+                        
+                    Huy Bao, a young student who arrived in the U.S. just ten months ago and had never driven before, 
+                    found VAS Driving School early on. Thanks to the comprehensive guidance and structured 36-hour driving course, 
+                    he gained a solid foundation in traffic laws and practical driving skills. With dedication and hard work, 
+                    Huy Bao completed the course in just two weeks and successfully passed his driving test today.</p>
+                </div>
+            </div>
+            <div class="success-story">
+                <img src="C:\Users\billy\OneDrive\Desktop\DTN.png" alt="Student 2">
+                <div class="story-content">
+                    <h3>Duy Thanh Nguyễn</h3>
+                    <p>Journey to Get a Driver's License Within a Month of Moving to the U.S!
+
+                    Duy Thanh, who already had a driver's license in Vietnam, came to the U.S. and was 
+                    guided by the lovely Truc Nguyen to VAS Driving School to handle the paperwork for 
+                    his driving test. Despite not knowing English, the school provided him with Vietnamese 
+                    study materials and instructions on using an app to practice on the computer. The next 
+                    day, he passed the theoretical test with ease using a school-issued alcohol certificate. 
+                    The following week, the school staff scheduled his skills test, picked him up from home, 
+                    helped him familiarize himself with the test area, and acted as his translator during the test. 
+                    Despite the strict examiner, he passed the test smoothly. Overjoyed, he shared the news with 
+                    his friends and family back in Vietnam. Having a driver's license quickly made his new life in 
+                    the U.S. much easier. Congratulations to him! 💐🍀🍾</p>
+                </div>
+            </div>
+        </div>
+        <div class="section student-success" data-lang="vi" style="display: none;">
+            <h2>Câu Chuyện Thành Công Của Học Viên</h2>
+            <div class="success-story">
+                <img src="C:\Users\billy\OneDrive\Desktop\HBN.png" alt="Student 1">
+                <div class="story-content">
+                    <h3>Huy Bảo Nguyễn</h3>
+                    <p>Chúc mừng Huy Bảo Nguyễn, một trong những học sinh đầu tiên của Trường Dạy Lái Xe VAS, đã đạt được bằng lái xe! 🎉
+
+                    Huy Bảo, một học sinh trẻ tuổi mới đến Mỹ cách đây 10 tháng và chưa từng lái xe trước đây, 
+                    đã tìm đến Trường Dạy Lái Xe VAS từ sớm. Nhờ vào sự hướng dẫn toàn diện và khóa học lái xe 36 
+                    giờ có cấu trúc, anh đã có được nền tảng vững chắc về luật giao thông và kỹ năng lái xe thực tế. 
+                    Với sự tận tâm và chăm chỉ, Huy Bảo đã hoàn thành khóa học chỉ trong hai tuần và đã thi đậu 
+                    bằng lái xe thành công ngày hôm nay.</p>
+                </div>
+            </div>
+            <div class="success-story">
+                <img src="C:\Users\billy\OneDrive\Desktop\DTN.png" alt="Student 2">
+                <div class="story-content">
+                    <h3>Duy Thanh Nguyễn</h3>
+                    <p>HÀNH TRÌNH LẤY BẰNG LÁI XE CHỈ TRONG 1 THÁNG ĐẾN MỸ ĐỊNH CƯ
+                    Anh Duy Thanh đã có bằng lái xe ở Việt Nam. Khi sang Mỹ, được chị Truc Nguyen dẫn đến VAS Driving School 
+                        để làm thủ tục thi bằng lái. Vì không biết tiếng Anh, trường đã cung cấp tài liệu học lý thuyết bằng tiếng 
+                        Việt và hướng dẫn sử dụng ứng dụng để luyện tập. Ngày hôm sau, anh thi lý thuyết và đậu ngay. Tuần sau, nhân 
+                        viên trường đặt hẹn thi kỹ năng, đón anh tại nhà và hỗ trợ làm quen địa hình. Kết quả, anh đậu bằng lái, giúp 
+                        cuộc sống mới ở Mỹ dễ dàng hơn. Chúc mừng anh! 💐🍀🍾</p>
+                </div>
+            </div>
+        </div>
+        
     </main>
     <footer>
         <p>Contact us: <a href="mailto:info@vasdrivingschool.net">info@vasdrivingschool.net</a> | 12621 Old Columbia Pike, Silver Spring, MD 20904 | Phone: 240-688-5597</p>
