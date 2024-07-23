@@ -4,250 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang="en">VAS Driving School</title>
-    <title data-lang="vi" style="display: none;">Trường Dạy Lái Xe VAS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            line-height: 1.6;
-        }
+    <title data-lang="en">Contact VAS Driving School</title>
+    <title data-lang="vi" style="display: none;">Liên Hệ Trường Dạy Lái Xe VAS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="mainstyle.css" rel="stylesheet">
 
-        header {
-            background: linear-gradient(90deg, #C85107, #FF8C00);
-            color: white;
-            padding: 20px 30px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        header nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        header nav ul li {
-            margin-left: 30px;
-        }
-
-        header nav ul li:first-child {
-            margin-left: 0;
-        }
-
-        header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
-
-        header nav ul li a:hover {
-            color: #FFD700;
-        }
-
-        footer {
-            background: linear-gradient(90deg, #C85107, #FF8C00);
-            color: white;
-            text-align: center;
-            padding: 20px 30px;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-            margin-top: auto;
-        }
-
-        button {
-            background-color: #FF8C00;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #FFD700;
-            transform: translateY(-3px);
-        }
-
-        .logo {
-            flex: 1;
-            text-align: left;
-        }
-
-        .title {
-            flex: 2;
-            text-align: center;
-        }
-
-        .title h1 {
-            transform: translateY(-10px);
-            margin: 0;
-        }
-
-        nav {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .service {
-            margin-bottom: 30px;
-        }
-
-        .language-switcher {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-        }
-
-        .language-switcher button {
-            margin-left: 10px;
-        }
-
-        main {
-            padding: 30px;
-            text-align: center;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card {
-            background: #56585A;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            margin: 20px;
-            width: 85%;
-            max-width: 1000px;
-            transition: transform 0.3s ease;
-            display: flex;
-            justify-content: center;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
-            width: 95%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .card img:hover {
-            transform: scale(1.05);
-        }
-
-        .section {
-            margin: 20px 0;
-        }
-
-        .section h2 {
-            color: #C85107;
-        }
-
-        .section p {
-            margin: 10px 0;
-        }
-
-        .upcoming-classes,
-        .special-offers,
-        .news,
-        .gallery,
-        .faq {
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 800px;
-        }
-
-        .gallery img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .faq h3 {
-            cursor: pointer;
-            margin: 0;
-        }
-
-        .faq p {
-            display: none;
-            margin: 10px 0 0 0;
-        }
-
-        .faq h3:hover {
-            color: #FF8C00;
-        }
-
-        .welcome-section {
-            background: #FF8C00;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 800px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .welcome-section:hover {
-            transform: translateY(-10px);
-        }
-
-        .welcome-section h2 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        .welcome-section p {
-            font-size: 18px;
-        }
-
-        /* Add this to your existing CSS */
-        .logo img {
-            animation: flip 12s linear infinite;
-        }
-
-        @keyframes flip {
-            0%,
-            16.67%,
-            100% {
-                transform: rotateY(0deg);
-            }
-
-            8.33% {
-                transform: rotateY(180deg);
-            }
-        }
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
     <script>
         function switchLanguage(lang) {
             var elements = document.querySelectorAll('[data-lang]');
@@ -278,13 +39,14 @@
             });
         });
     </script>
+    
 </head>
 
 <body onload="switchLanguage('en');">
     <header>
         <div class="logo">
             <a href="index.html">
-            <img src="logo.jpg" alt="VAS Driving School Logo" style="height: 50px;">
+                <img src="logo.jpg" alt="VAS Driving School Logo" style="height: 50px;">
             </a>
         </div>
         <div class="title">
@@ -313,7 +75,8 @@
     <main>
         <section class="contact-details" data-lang="en">
             <h2>Contact Us</h2>
-            <p>We'd love to hear from you! Whether you have questions about our programs, need assistance with enrollment, or want to provide feedback, our team is here to help.</p>
+            <p>We'd love to hear from you!</p>
+            <p>Whether you have questions about our programs, need assistance with enrollment, or want to provide feedback, our team is here to help.</p>
             <div class="contact-info">
                 <div class="contact-method">
                     <h3>Visit Us</h3>
@@ -331,11 +94,30 @@
                     <p>Email: <a href="mailto:info@vasdrivingschool.net">info@vasdrivingschool.net</a></p>
                     <p>We aim to respond to all emails within 24 hours.</p>
                 </div>
+                <div class="contact-method">
+                    <h3>Operating Hours</h3>
+                    <p>Monday - Friday: 9 AM - 5 PM</p>
+                    <p>Saturday: Closed</p>
+                    <p>Sunday: Closed</p>
+                </div>
+                <div class="contact-method">
+                    <h3>Follow Us</h3>
+                    <p>
+                        <a href="https://www.facebook.com/profile.php?id=61560435342109" target="_blank">
+                            <img src="C:\Users\billy\OneDrive\Desktop\Vasdrivingschoolweb\Facebook.png" alt="Facebook" class="social-icon">
+                        </a>
+                        <a href="https://www.instagram.com/yourprofile" target="_blank">
+                            <img src="C:\Users\billy\OneDrive\Desktop\Vasdrivingschoolweb\Insta.jpg" alt="Instagram" class="social-icon">
+                        </a>
+                    </p>
+                </div>
             </div>
         </section>
+
         <section class="contact-details" data-lang="vi" style="display: none;">
             <h2>Liên Hệ</h2>
-            <p>Chúng tôi rất vui khi được nghe từ bạn! Cho dù bạn có câu hỏi về các chương trình của chúng tôi, cần hỗ trợ với việc ghi danh, hay muốn đưa ra phản hồi, đội ngũ của chúng tôi luôn sẵn sàng giúp đỡ.</p>
+            <p>Chúng tôi rất vui khi được nghe từ bạn!</p> 
+            <p>Cho dù bạn có câu hỏi về các chương trình của chúng tôi, cần hỗ trợ với việc ghi danh, hay muốn đưa ra phản hồi, đội ngũ của chúng tôi luôn sẵn sàng giúp đỡ.</p>
             <div class="contact-info">
                 <div class="contact-method">
                     <h3>Ghé Thăm Chúng Tôi</h3>
@@ -353,6 +135,23 @@
                     <p>Email: <a href="mailto:info@vasdrivingschool.net">info@vasdrivingschool.net</a></p>
                     <p>Chúng tôi cố gắng trả lời tất cả email trong vòng 24 giờ.</p>
                 </div>
+                <div class="contact-method">
+                    <h3>Giờ Hoạt Động</h3>
+                    <p>Thứ Hai - Thứ Sáu: 9 AM - 5 PM</p>
+                    <p>Thứ Bảy: Đóng cửa</p>
+                    <p>Chủ Nhật: Đóng cửa</p>
+                </div>
+                <div class="contact-method">
+                    <h3>Theo Dõi Chúng Tôi</h3>
+                    <p>
+                        <a href="https://www.facebook.com/profile.php?id=61560435342109" target="_blank">
+                            <img src="C:\Users\billy\OneDrive\Desktop\Vasdrivingschoolweb\Facebook.png" alt="Facebook" class="social-icon">
+                        </a>
+                        <a href="https://www.instagram.com/yourprofile" target="_blank">
+                            <img src="C:\Users\billy\OneDrive\Desktop\Vasdrivingschoolweb\Insta.jpg" alt="Instagram" class="social-icon">
+                        </a>
+                    </p>
+                </div>
             </div>
         </section>
     </main>
@@ -361,4 +160,4 @@
     </footer>
 </body>
 
-</html>
+</html
