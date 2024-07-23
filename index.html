@@ -7,266 +7,31 @@
     <title data-lang="en">VAS Driving School</title>
     <title data-lang="vi" style="display: none;">Trường Dạy Lái Xe VAS</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            line-height: 1.6;
-        }
+    <link href="mainstyle.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-        header {
-            background: linear-gradient(90deg, #C85107, #FF8C00);
-            color: white;
-            padding: 20px 30px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.gallery-slider').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: true,
+                dots: true
+            });
+        });
+    </script>
+    
 
-        header nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        header nav ul li {
-            margin-left: 30px;
-        }
-
-        header nav ul li:first-child {
-            margin-left: 0;
-        }
-
-        header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
-
-        header nav ul li a:hover {
-            color: #FFD700;
-        }
-
-        footer {
-            background: linear-gradient(90deg, #C85107, #FF8C00);
-            color: white;
-            text-align: center;
-            padding: 20px 30px;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-            margin-top: auto;
-        }
-
-        button {
-            background-color: #FF8C00;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #FFD700;
-            transform: translateY(-3px);
-        }
-
-        .logo {
-            flex: 1;
-            text-align: left;
-        }
-
-        .title {
-            flex: 2;
-            text-align: center;
-        }
-
-        .title h1 {
-            transform: translateY(-10px);
-            margin: 0;
-        }
-
-        nav {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .service {
-            margin-bottom: 30px;
-        }
-
-        .language-switcher {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-        }
-
-        .language-switcher button {
-            margin-left: 10px;
-        }
-
-        main {
-            padding: 30px;
-            text-align: center;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card {
-            background: #56585A;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            margin: 20px;
-            width: 85%;
-            max-width: 1000px;
-            transition: transform 0.3s ease;
-            display: flex;
-            justify-content: center;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
-            width: 95%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .card img:hover {
-            transform: scale(1.05);
-        }
-
-        .section {
-            margin: 20px 0;
-        }
-
-        .section h2 {
-            color: #C85107;
-        }
-
-        .section p {
-            margin: 10px 0;
-        }
-
-        .upcoming-classes,
-        .special-offers,
-        .news,
-        .gallery,
-        .faq {
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 800px;
-        }
-
-        .gallery img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .faq h3 {
-            cursor: pointer;
-            margin: 0;
-        }
-
-        .faq p {
-            display: none;
-            margin: 10px 0 0 0;
-        }
-
-        .faq h3:hover {
-            color: #FF8C00;
-        }
-
-        .welcome-section {
-            background: #FF8C00;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 800px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .welcome-section:hover {
-            transform: translateY(-10px);
-        }
-
-        .welcome-section h2 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        .welcome-section p {
-            font-size: 18px;
-        }
-
-
-        /* Add this to your existing CSS */
-        .logo img {
-            animation: flip 12s linear infinite;
-        }
-
-        @keyframes flip {
-
-            0%,
-            16.67%,
-            100% {
-                transform: rotateY(0deg);
-            }
-
-            8.33% {
-                transform: rotateY(180deg);
-            }
-        }
-
-
-
-
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
     <script>
-        function switchLanguage(lang) {
-            var elements = document.querySelectorAll('[data-lang]');
-            elements.forEach(element => {
-                element.style.display = 'none';
-            });
-            var selectedLangElements = document.querySelectorAll('[data-lang="' + lang + '"]');
-            selectedLangElements.forEach(element => {
-                element.style.display = 'block';
-            });
-            document.title = document.querySelector('title[data-lang="' + lang + '"]').textContent;
-        }
-
+        // Toggle FAQ visibility
         function toggleFAQ(event) {
             const faq = event.currentTarget;
             const answer = faq.nextElementSibling;
@@ -278,19 +43,77 @@
             }
         }
 
+        // Event listeners for FAQ and modal
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.faq h3').forEach(faq => {
                 faq.addEventListener('click', toggleFAQ);
+            });
+
+            // Show the modal after 5 seconds
+            setTimeout(() => {
+                var modal = document.getElementById('myModal');
+                var span = document.getElementsByClassName('close')[0];
+
+                modal.style.display = 'block';
+
+                span.onclick = function () {
+                    modal.style.display = 'none';
+                }
+
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                }
+            }, 5000);
+        });
+
+        function switchLanguage(lang) {
+            // Store the language preference in local storage
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Apply the language setting to the page
+            var elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                element.style.display = 'none';
+            });
+            var selectedLangElements = document.querySelectorAll('[data-lang="' + lang + '"]');
+            selectedLangElements.forEach(element => {
+                element.style.display = 'block';
+            });
+            document.title = document.querySelector('title[data-lang="' + lang + '"]').textContent;
+        }
+
+        function applyStoredLanguage() {
+            // Get the preferred language from local storage
+            var preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            switchLanguage(preferredLanguage);
+        }
+
+        // Apply the stored language when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            applyStoredLanguage();
+
+            // Add event listeners for language switch buttons
+            document.querySelectorAll('.language-switcher button').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    var lang = event.target.getAttribute('onclick').split("'")[1];
+                    switchLanguage(lang);
+                });
             });
         });
     </script>
 </head>
 
 <body onload="switchLanguage('en');">
+
+
+
     <header>
         <div class="logo">
             <a href="index.html">
-            <img src="logo.jpg" alt="VAS Driving School Logo" style="height: 50px;">
+                <img src="C:\Users\billy\OneDrive\Desktop\Vasdrivingschoolweb\logo.jpg" alt="VAS Driving School Logo"
+                    style="height: 50px;">
             </a>
         </div>
 
@@ -313,6 +136,7 @@
                 <li><a href="signup.html" data-lang="vi" style="display: none;">Đăng Ký</a></li>
             </ul>
         </nav>
+
         <div class="language-switcher">
             <button onclick="switchLanguage('en');">English</button>
             <button onclick="switchLanguage('vi');">Vietnamese</button>
@@ -322,7 +146,7 @@
         <div class="card" data-lang="en">
             <img src="EnglishHomePage.jpg" alt="VAS Driving School">
         </div>
-        <div class="card" data-lang="vi">
+        <div class="card" data-lang="vi" style="display: none;">
             <img src="VietnameseHomePage.jpg" alt="VAS Driving School">
         </div>
 
@@ -341,79 +165,270 @@
 
         <div class="section upcoming-classes" data-lang="en">
             <h2>Upcoming Classes</h2>
+            <h3>36-Hour Driving Classes</h3>
             <ul>
-                <li>June 24, 2024</li>
-                <li>July 8, 2024</li>
-                <li>July 22, 2024</li>
-                <li>August 5, 2024</li>
-                <li>August 19, 2024</li>
+                <li><span>August 19, 2024</span></li>
+                <li><span>September 16, 2024</span></li>
+                <li><span>October 14, 2024</span></li>
+            </ul>
+            <h3>3-Hour Alcohol Classes</h3>
+            <ul>
+                <li><span>August 21, 2024</span></li>
+                <li><span>November 20, 2024</span></li>
             </ul>
             <button onclick="window.location.href='signup.html'">Sign Up Now</button>
         </div>
+
         <div class="section upcoming-classes" data-lang="vi" style="display: none;">
             <h2>Các Lớp Học Sắp Tới</h2>
+            <h3>Các Lớp Học Lái Xe 36 Giờ</h3>
             <ul>
-                <li>Ngày 24 Tháng 6, 2024</li>
-                <li>Ngày 8 Tháng 7, 2024</li>
-                <li>Ngày 22 Tháng 7, 2024</li>
-                <li>Ngày 5 Tháng 8, 2024</li>
-                <li>Ngày 19 Tháng 8, 2024</li>
+                <li><span>Ngày 19 Tháng 8, 2024</span></li>
+                <li><span>Ngày 16 Tháng 9, 2024</span></li>
+                <li><span>Ngày 14 Tháng 10, 2024</span></li>
+            </ul>
+            <h3>Các Lớp Học Rượu 3 Giờ</h3>
+            <ul>
+                <li><span>Ngày 21 Tháng 8, 2024</span></li>
+                <li><span>Ngày 20 Tháng 11, 2024</span></li>
             </ul>
             <button onclick="window.location.href='signup.html'">Đăng Ký Ngay</button>
         </div>
 
+
+
         <div class="section special-offers" data-lang="en">
             <h2>Special Offers</h2>
-            <p>Enroll now and get a 10% discount on your first class!</p>
-            <p>Refer a friend and both of you will receive a $20 discount on your next session.</p>
+            <div class="offer">
+                <i class="fas fa-tags"></i>
+                <p>Enroll now and get a <strong>$10 discount</strong> on your first class!</p>
+            </div>
+            <div class="offer">
+                <i class="fas fa-user-friends"></i>
+                <p>Refer a friend and both of you will receive a <strong>$20 discount</strong> on your next session.</p>
+            </div>
         </div>
         <div class="section special-offers" data-lang="vi" style="display: none;">
             <h2>Ưu Đãi Đặc Biệt</h2>
-            <p>Đăng ký ngay bây giờ để được giảm giá 10% cho lớp học đầu tiên của bạn!</p>
-            <p>Giới thiệu một người bạn và cả hai sẽ nhận được giảm giá $20 cho buổi học tiếp theo của bạn.</p>
+            <div class="offer">
+                <i class="fas fa-tags"></i>
+                <p>Đăng ký ngay bây giờ để được giảm giá <strong>$10</strong> cho lớp học đầu tiên của bạn!</p>
+            </div>
+            <div class="offer">
+                <i class="fas fa-user-friends"></i>
+                <p>Giới thiệu một người bạn và cả hai sẽ nhận được giảm giá <strong>$20</strong> cho buổi học tiếp theo của bạn.</p>
+            </div>
         </div>
-
+        
         <div class="section news" data-lang="en">
             <h2>Latest News</h2>
-            <p>June 1, 2024: We are excited to announce the opening of our new location in Silver Spring!</p>
-            <p>May 15, 2024: Our summer classes are filling up quickly. Register now to secure your spot!</p>
+            <div class="news-item">
+                <p><strong>May 28, 2024:</strong> VAS Driving School officially opened its doors!</p>
+                <p class="story">We celebrated our grand opening with a ribbon-cutting ceremony and welcomed our first batch of students.</p>
+            </div>
+            <div class="news-item">
+                <p><strong>June 24, 2024:</strong> Our first-ever class has started.</p>
+                <p class="story">Our inaugural class began their journey to becoming safe and skilled drivers. The students showed great enthusiasm and commitment.</p>
+            </div>
+            <div class="news-item">
+                <p><strong>July 22, 2024:</strong> Our second class is now underway.</p>
+                <p class="story">The second batch of students is making excellent progress, with hands-on driving sessions and interactive classroom activities.</p>
+            </div>
+            <div class="news-item">
+                <p><strong>August 19, 2024:</strong> Sign up for our next class session!</p>
+                <p class="story">Don't miss out on the opportunity to join our next session and start your journey to becoming a confident driver.</p>
+            </div>
         </div>
+        
         <div class="section news" data-lang="vi" style="display: none;">
             <h2>Tin Tức Mới Nhất</h2>
-            <p>Ngày 1 Tháng 6, 2024: Chúng tôi rất vui mừng thông báo khai trương địa điểm mới của chúng tôi ở Silver
-                Spring!</p>
-            <p>Ngày 15 Tháng 5, 2024: Các lớp học mùa hè của chúng tôi đang nhanh chóng đầy. Đăng ký ngay để đảm bảo chỗ
-                của bạn!</p>
+            <div class="news-item">
+                <p><strong>Ngày 28 Tháng 5, 2024:</strong> Trường Lái Xe VAS chính thức khai trương!</p>
+                <p class="story">Chúng tôi đã tổ chức lễ khai trương với lễ cắt băng khánh thành và chào đón nhóm học viên đầu tiên.</p>
+            </div>
+            <div class="news-item">
+                <p><strong>Ngày 24 Tháng 6, 2024:</strong> Lớp học đầu tiên của chúng tôi đã bắt đầu.</p>
+                <p class="story">Lớp học khai giảng của chúng tôi bắt đầu hành trình trở thành những người lái xe an toàn và có kỹ năng. Các học viên đã thể hiện sự nhiệt tình và cam kết tuyệt vời.</p>
+            </div>
+            <div class="news-item">
+                <p><strong>Ngày 22 Tháng 7, 2024:</strong> Lớp học thứ hai của chúng tôi hiện đang diễn ra.</p>
+                <p class="story">Nhóm học viên thứ hai đang tiến bộ xuất sắc, với các buổi học lái xe thực hành và các hoạt động lớp học tương tác.</p>
+            </div>
+            <div class="news-item">
+                <p><strong>Ngày 19 Tháng 8, 2024:</strong> Đăng ký cho buổi học tiếp theo của chúng tôi!</p>
+                <p class="story">Đừng bỏ lỡ cơ hội tham gia buổi học tiếp theo của chúng tôi và bắt đầu hành trình trở thành một người lái xe tự tin.</p>
+            </div>
         </div>
+        
+        
+        <div class="section news" data-lang="vi" style="display: none;">
+            <h2>Tin Tức Mới Nhất</h2>
+            <div class="news-item">
+                <i class="fas fa-calendar-day"></i>
+                <p><strong>Ngày 28 Tháng 5, 2024:</strong> Trường Lái Xe VAS chính thức khai trương!</p>
+            </div>
+            <div class="news-item">
+                <i class="fas fa-calendar-day"></i>
+                <p><strong>Ngày 24 Tháng 6, 2024:</strong> Lớp học đầu tiên của chúng tôi đã bắt đầu.</p>
+            </div>
+            <div class="news-item">
+                <i class="fas fa-calendar-day"></i>
+                <p><strong>Ngày 22 Tháng 7, 2024:</strong> Lớp học thứ hai của chúng tôi hiện đang diễn ra.</p>
+            </div>
+            <div class="news-item">
+                <i class="fas fa-calendar-day"></i>
+                <p><strong>Ngày 19 Tháng 8, 2024:</strong> Đăng ký cho buổi học tiếp theo của chúng tôi!</p>
+            </div>
+        </div>
+        
+        <div class="gallery-section" data-lang="en">
+            <h2>Gallery</h2>
+            <div class="gallery-slider">
+                <div><img src="C:\Users\billy\OneDrive\Desktop\Driving School\image1.jpg"
+                        alt="Gallery Image 1"></div>
+                <div><img src="C:\Users\billy\OneDrive\Desktop\Driving School\image2.jpg"
+                        alt="Gallery Image 2"></div>
+            </div>
+        </div>
+        <div class="gallery-section" data-lang="vi" style="display: none;">
+            <h2>Bộ Sưu Tập</h2>
+            <div class="gallery-slider">
+                <div><img src="C:\Users\billy\OneDrive\Desktop\Driving School\image1.jpg"
+                        alt="Gallery Image 1"></div>
+                <div><img src="C:\Users\billy\OneDrive\Desktop\Driving School\image2.jpg"
+                        alt="Gallery Image 2"></div>
+            </div>
+        </div>
+
+
+
+
 
         <div class="section faq" data-lang="en">
             <h2>Frequently Asked Questions</h2>
             <div>
                 <h3>What do I need to bring to my first class?</h3>
-                <p>Please bring a valid learner's permit, a notebook, and a pen.</p>
+                <p>For your first class, please bring a valid learner's permit, a notebook, and a pen. If you have any
+                    prior driving experience, bringing related documentation can be helpful.</p>
             </div>
             <div>
                 <h3>How do I sign up for classes?</h3>
-                <p>You can sign up online through our website or call us at 240-688-5597.</p>
+                <p>You can sign up for classes through our website by visiting the "Sign Up" page. Alternatively,
+                    call us directly at 240-688-5597 to register over the phone. We’re here to assist with any questions
+                    you may have during the registration process.</p>
+            </div>
+            <div>
+                <h3>What is the schedule for upcoming classes?</h3>
+                <p>Our upcoming classes are listed on the "Upcoming Classes" section of our website. Check this page
+                    regularly for the latest schedule and available slots. You can also contact us for the most
+                    up-to-date information.</p>
+            </div>
+            <div>
+                <h3>What are the payment options?</h3>
+                <p>We accept all types of payments, including credit/debit cards, cash, and electronic transfers.
+                    Payments can be made online via our website or in person at our office. For detailed payment
+                    information and options, please visit the "Payment Options" section on our website.</p>
+            </div>
+            <div>
+                <h3>What if I need to cancel or reschedule a class?</h3>
+                <p>If you need to cancel or reschedule a class, please notify us at least 24 hours in advance. You can
+                    do this by calling us at 240-688-5597 or emailing us at info@vasusa.org. We’ll assist you with
+                    rearranging your schedule.</p>
             </div>
         </div>
         <div class="section faq" data-lang="vi" style="display: none;">
             <h2>Các Câu Hỏi Thường Gặp</h2>
             <div>
                 <h3>Tôi cần mang gì đến lớp học đầu tiên?</h3>
-                <p>Vui lòng mang theo giấy phép học lái xe hợp lệ, một cuốn sổ tay và một cây bút.</p>
+                <p>Vui lòng mang theo giấy phép học lái xe hợp lệ, một cuốn sổ tay và một cây bút. Nếu bạn có bất kỳ
+                    kinh nghiệm lái xe trước đó, việc mang theo tài liệu liên quan có thể hữu ích.</p>
             </div>
             <div>
                 <h3>Làm thế nào để đăng ký lớp học?</h3>
-                <p>Bạn có thể đăng ký trực tuyến qua trang web của chúng tôi hoặc gọi cho chúng tôi theo số
-                    240-688-5597.</p>
+                <p>Bạn có thể đăng ký lớp học qua trang web của chúng tôi bằng cách truy cập vào trang "Đăng ký". Ngoài
+                    ra, bạn cũng có thể gọi cho chúng tôi trực tiếp theo số 240-688-5597 để đăng ký qua điện thoại.
+                    Chúng tôi luôn sẵn sàng hỗ trợ bạn với bất kỳ câu hỏi nào trong quá trình đăng ký.</p>
+            </div>
+            <div>
+                <h3>Thời gian các lớp học sắp tới là gì?</h3>
+                <p>Các lớp học sắp tới của chúng tôi được liệt kê trên mục "Lịch Lớp Học Sắp Tới" trên trang web của
+                    chúng tôi. Hãy kiểm tra trang này thường xuyên để cập nhật lịch trình mới nhất và các giờ còn trống.
+                    Bạn cũng có thể liên hệ với chúng tôi để biết thông tin mới nhất.</p>
+            </div>
+            <div>
+                <h3>Các phương thức thanh toán là gì?</h3>
+                <p>Chúng tôi chấp nhận tất cả các loại phương thức thanh toán, bao gồm thẻ tín dụng/thẻ ghi nợ, tiền mặt
+                    và chuyển khoản điện tử. Thanh toán có thể được thực hiện trực tuyến qua trang web của chúng tôi
+                    hoặc tại văn phòng của chúng tôi. Để biết thêm thông tin chi tiết về các tùy chọn thanh toán, vui
+                    lòng truy cập vào mục "Tùy Chọn Thanh Toán" trên trang web của chúng tôi.</p>
+            </div>
+            <div>
+                <h3>Thì sao nếu tôi cần hủy hoặc thay đổi lịch lớp học?</h3>
+                <p>Nếu bạn cần hủy hoặc thay đổi lịch lớp học, vui lòng thông báo cho chúng tôi ít nhất 24 giờ trước.
+                    Bạn có thể làm điều này bằng cách gọi cho chúng tôi theo số 240-688-5597 hoặc gửi email đến
+                    info@vasusa.org. Chúng tôi sẽ hỗ trợ bạn sắp xếp lại lịch học.</p>
             </div>
         </div>
+
+
+        <div class="section testimonials" data-lang="en">
+            <h2>Testimonials</h2>
+            <p>What our students say about us:</p>
+            <div class="testimonial">
+                <blockquote>
+                    <p>"Thank you Tho Tran and Anh Dang for teaching Bảo. Passing the driving test brought our family
+                        great joy. We appreciate VAS Driving School for its dedication."</p>
+                    <cite>- Bach Nguyen</cite>
+                </blockquote>
+            </div>
+            <div class="testimonial">
+                <blockquote>
+                    <p>"After a few days in class, I found the instructor's engaging and humorous approach made learning
+                        enjoyable. The personalized feedback was invaluable. Older students like us can definitely
+                        benefit from this."</p>
+                    <cite>- Anh Huynh</cite>
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="section testimonials" data-lang="vi" style="display: none;">
+            <h2>Lời Chứng Thực</h2>
+            <p>Những gì học viên của chúng tôi nói về chúng tôi:</p>
+            <div class="testimonial">
+                <blockquote>
+                    <p>"Cám ơn cô Thơ và bé Quốc Anh đã dạy Bảo. Việc cháu đậu bằng lái xe mang lại niềm vui lớn cho gia
+                        đình chúng tôi. Xin cảm ơn VAS Driving School vì sự tận tâm của họ."</p>
+                    <cite>- Bach Nguyen</cite>
+                </blockquote>
+            </div>
+            <div class="testimonial">
+                <blockquote>
+                    <p>"Sau vài ngày học, tôi thấy cách giảng dạy của giáo viên rất lôi cuốn và hài hước. Phản hồi cá
+                        nhân rất quý giá. Những học viên lớn tuổi như chúng tôi thật sự có thể hưởng lợi từ điều này."
+                    </p>
+                    <cite>- Anh Huynh</cite>
+                </blockquote>
+            </div>
+        </div>
+
+
+
     </main>
     <footer>
         <p>Contact us: <a href="mailto:info@vasdrivingschool.net">info@vasdrivingschool.net</a> | 12621 Old Columbia
             Pike, Silver Spring, MD 20904 | Phone: 240-688-5597</p>
     </footer>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Special Offers</h2>
+            <p>Sign up now and get a $10 discount on our 36-Hour Full Class!</p>
+            <button onclick="window.location.href='signup.html'">Sign Up Now</button>
+        </div>
+    </div>
+
 </body>
 
 </html>
