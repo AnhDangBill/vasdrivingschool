@@ -1,0 +1,1168 @@
+/*----------------------------General Styling---------------------------------*/
+* {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
+  width: 100%;
+}
+
+/* Navigation Section */
+/* Base styles */
+nav {
+  width: 100%;
+  height: 90px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  box-shadow: 0 4px 4px rgba(129, 129, 129, 0.4);
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Ensure no margin-bottom since it's fixed */
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+nav div a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: #545454;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav div a:hover {
+  background-color: #C85107;
+  color: white;
+}
+
+.logo-container a:hover {
+  background-color: transparent;
+  color: inherit; /* Keeps the original color */
+}
+
+.menu-links {
+  display: flex;
+  gap: 20px;
+}
+
+.logo {
+  height: 130px;
+}
+
+.three-bars {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    background-color: white;
+    text-align: right;
+    width: 100%;
+    padding: 20px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo {
+    height: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .menu-links.active {
+    display: flex;
+  }
+
+  /* Show the three-bar icon on small screens */
+  .three-bars {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+  }
+}
+
+
+
+/* ---------------------------------Slideshow---------------------------------*/
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  width: 100vw;
+  height: 33.85vw;
+  /* Maintain the 1920x650 aspect ratio */
+  margin: auto;
+  overflow: hidden;
+  margin-top: 90px;
+  /* Adjust to match the nav bar height */
+}
+
+/* Wrapper for all slides */
+.slides-wrapper {
+  display: flex;
+  transition: transform 3s ease;
+  /* Slowed down from 0.5s to 1.5s for a slower scroll */
+}
+
+/* Individual slide */
+.mySlides {
+  min-width: 100vw;
+  /* Ensure each slide occupies full viewport width */
+  transition: transform 3s ease;
+  /* Match the slower transition */
+}
+
+
+/* Images to fit the container */
+.slideshow-container img {
+  width: 100%;
+  /* Image fills the container width */
+  height: 100%;
+  /* Image fills the container height */
+  object-fit: cover;
+  /* Maintains aspect ratio by cropping if necessary */
+}
+
+/* Next and previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 55%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #C85107;
+}
+
+/* Slideshow Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .slideshow-container {
+    height: 50vw;
+    /*Increase height for smaller screens to maintain a good aspect ratio */
+  }
+
+  .prev,
+  .next {
+    font-size: 14px;
+    /* Decrease the button font size for small screens */
+    padding: 10px;
+    /* Adjust padding to fit the smaller layout */
+    top: 37%;
+  }
+
+  .slides-wrapper {
+    transition: transform 1s ease;
+    /* Reduce transition time for a snappier feel on mobile */
+  }
+
+  .mySlides {
+    transition: transform 1s ease;
+    /* Keep the transition consistent */
+  }
+}
+
+
+
+
+/* -----------------------------upcoming Class------------------------------- */
+/* Upcoming Class Section */
+.upcoming-class {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  /* Ensure padding doesn't cause overflow */
+}
+
+.class-header h2 {
+  font-size: 32px;
+  color: #2a2e38;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -30px;
+}
+
+.event-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+  /* Ensure no padding issues */
+}
+
+/* Flexbox Adjustments */
+.event-card .class-info {
+  flex: 2;
+  text-align: left;
+}
+
+.event-card .class-image {
+  flex: 1;
+  text-align: center;
+}
+
+.event-card img {
+  max-width: 200px;
+  border-radius: 10px;
+}
+
+.event-card h3 {
+  color: #C85107;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  color: #333;
+  /* Change to the color used in success stories */
+  font-size: 16px;
+  /* Change to match the font size of success stories */
+  margin-bottom: 20px;
+}
+
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .event-card {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    /* Ensure the card takes full width */
+    box-sizing: border-box;
+    /* Prevent overflow */
+  }
+
+  .event-card .class-info {
+    text-align: center;
+    /* Center text for small screens */
+  }
+
+  .event-card img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* Makes the image take full width */
+    max-width: 100%;
+    /* Prevent overflow */
+  }
+
+  .class-header h2 {
+    margin-top: -120px;
+  }
+}
+
+
+
+
+/*-------------------------------- Stats Section Styling ---------------------*/
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background: url('Stat\ Background.png') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  /* Set the width to 90% of the viewport */
+  height: 33.85vw;
+  /* Maintain aspect ratio */
+  margin: 0 auto 50px auto;
+  /* Center the section by applying auto margins */
+  margin-bottom: -1px;
+}
+
+
+
+.stats-section .header h2 {
+  font-size: 32px;
+  color: white;
+  /* Title color */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.stat {
+  text-align: center;
+  color: white;
+  padding: 30px 20px;
+  /* Increased padding for more breathing room */
+  border-radius: 10px;
+  background: rgba(51, 17, 0, 0.85);
+  width: 150px;
+  /* Make stat boxes smaller */
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.number {
+  font-size: 48px;
+  font-weight: bold;
+  transition: 1.5s ease;
+  /* Smooth transition for number animation */
+}
+
+.label {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+/* Responsive Design for Medium Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .stats-section {
+    justify-content: space-between;
+    /* Ensure even spacing */
+    padding: 10px;
+    /* Reduce padding */
+  }
+
+  .stats-section .header h2 {
+    font-size: 28px;
+    /* Smaller title */
+    margin-bottom: 20px;
+  }
+
+  .stat {
+    width: 100px;
+    /* Make each stat smaller */
+    height: 75px;
+    padding: 20px 10px;
+    /* Reduce padding inside each stat */
+    margin-top: 15px;
+  }
+
+  .number {
+    font-size: 36px;
+    /* Smaller number */
+  }
+
+  .label {
+    font-size: 18px;
+    /* Smaller label */
+  }
+}
+
+/* Responsive Design for Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .stats-section {
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  .stats-section .header h2 {
+    font-size: 24px;
+    /* Even smaller title */
+    margin-bottom: 15px;
+  }
+
+  .stat {
+    width: 100px;
+    /* Further reduce stat size */
+    height: 50px;
+    padding: 15px 5px;
+    /* Reduce padding inside each stat */
+  }
+
+  .number {
+    font-size: 20px;
+    /* Smaller number */
+  }
+
+  .label {
+    font-size: 14px;
+    /* Smaller label */
+  }
+}
+
+/*-------------------Testimonials and Success Stories-------------------------*/
+.testimonials-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.testimonials-section .header h2 {
+  font-size: 32px;
+  color: #2a2e38;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -60px;
+}
+
+/* Testimonial and Success Story Block */
+.testimonial {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  /* Align image and content vertically */
+}
+
+/* Testimonial Image */
+.testimonial-img {
+  border-radius: 50%;
+  width: 100px;
+  /* Adjust the size as needed */
+  height: 100px;
+  /* Make the image a perfect circle */
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+/* Content Inside Testimonial */
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center the student name horizontally */
+  text-align: center;
+  flex: 1;
+  /* Take the remaining space */
+}
+
+.testimonial-content h3,
+.success-story h3 {
+  font-size: 20px;
+  color: #C85107;
+  /* Set the name color to orange */
+  margin-bottom: 10px;
+  text-align: center;
+  /* Center-align the name */
+}
+
+
+/*--------------------------------FAQ Section Styling-------------------------*/
+.faq-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
+  margin-top: -30px;
+}
+
+.faq-section .header h2 {
+  font-size: 32px;
+  color: #2a2e38;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -30px;
+}
+
+/* FAQ Header Styling */
+.faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-header h3 {
+  font-size: 20px;
+  color: #C85107;
+  /* Orange color for the question headers */
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  /* Center-align the question */
+}
+
+.toggle-icon {
+  font-size: 24px;
+  color: #C85107;
+}
+
+/* FAQ Answer Styling */
+.faq-answer {
+  display: none;
+  /* Initially hidden */
+  padding: 10px 20px;
+  color: #333;
+  font-size: 16px;
+  border-left: 4px solid #C85107;
+  /* Add a left border for styling */
+  margin-bottom: 20px;
+}
+
+/* FAQ Image Styling */
+.faq-img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+
+/*----------------------------Footer Styling----------------------------------*/
+.footer {
+  background-color: #2a2e38;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* About Section */
+.footer-about h3,
+.footer-links h3,
+.footer-contact h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #C85107;
+  /* Match the orange theme */
+}
+
+.footer-about p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Quick Links */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #C85107;
+  /* Change link color on hover */
+}
+
+/* Contact Section */
+.footer-contact p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* Facebook Icon Styling */
+.footer-social {
+  margin-top: 15px;
+}
+
+.footer-social a {
+  color: white;
+  font-size: 24px;
+  margin-right: 10px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #C85107;
+  /* Change to orange on hover */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  background-color: #222;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-about,
+  .footer-links,
+  .footer-contact {
+    margin-bottom: 30px;
+  }
+}
+
+/*-----------------------------------ABOUT US PAGE----------------------------*/
+/* About Us Section Styling */
+.about-us-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.about-us-section .header h2 {
+  font-size: 32px;
+  color: #2a2e38;
+  margin-bottom: 30px;
+  margin-top: 75px;
+}
+
+.about-us-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-us-text {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.about-us-img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Responsive Design for Medium Screens (Tablets, etc.) */
+@media (max-width: 768px) {
+  .about-us-section {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .about-us-section .header h2 {
+    font-size: 28px; /* Decrease font size for heading */
+  }
+
+  .about-us-text {
+    font-size: 14px; /* Decrease font size for text */
+    max-width: 90%; /* Allow more width for the text */
+    padding: 15px; /* Add padding for readability */
+  }
+
+  .about-us-img {
+    max-width: 90%; /* Make image slightly smaller */
+    margin-top: 15px;
+  }
+}
+
+/* Responsive Design for Small Screens (Phones, etc.) */
+@media (max-width: 480px) {
+  .about-us-section {
+    padding: 10px; /* Further reduce padding */
+  }
+
+  .about-us-section .header h2 {
+    font-size: 24px; /* Smaller font size for mobile */
+  }
+
+  .about-us-text {
+    font-size: 12px; /* Further reduce font size */
+    padding: 10px; /* Ensure text is still readable */
+  }
+
+  .about-us-img {
+    max-width: 100%; /* Ensure the image takes up full width on small screens */
+    margin-top: 10px;
+  }
+}
+
+/* Meet Our Team Section (styled like Testimonials) */
+.team-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.team-section .header h2 {
+  font-size: 32px;
+  color: #2a2e38;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -40px;
+}
+
+.team-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.team-member {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.team-img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.team-info {
+  flex: 1;
+  text-align: left;
+}
+
+.team-info h3 {
+  font-size: 20px;
+  color: #C85107;
+  margin-bottom: 5px;
+}
+
+.team-info p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .about-us-text {
+    text-align: center;
+    font-size: 14px; /* Reduce font size */
+  }
+
+  .about-us-img {
+    max-width: 90%; /* Scale down image */
+  }
+
+  .team-content {
+    flex-direction: column;
+  }
+
+  .team-member {
+    flex-direction: row; /* Keep horizontal layout */
+    align-items: center;
+    padding: 15px; /* Reduce padding */
+  }
+
+  .team-img {
+    width: 80px; /* Smaller image */
+    height: 80px;
+  }
+
+  .team-info h3 {
+    font-size: 18px; /* Smaller heading */
+  }
+
+  .team-info p {
+    font-size: 14px; /* Smaller paragraph text */
+  }
+}
+
+/* Responsive Design for Very Small Screens */
+@media (max-width: 480px) {
+  .about-us-section .header h2 {
+    font-size: 28px; /* Reduce heading size */
+  }
+
+  .team-section .header h2 {
+    font-size: 28px; /* Reduce heading size */
+  }
+
+  .team-member {
+    flex-direction: column; /* Stack vertically */
+    align-items: center;
+    padding: 10px; /* Further reduce padding */
+  }
+
+  .team-img {
+    width: 60px; /* Smaller image */
+    height: 60px;
+    margin-bottom: 10px; /* Add space under image */
+  }
+
+  .team-info h3 {
+    font-size: 16px; /* Smaller heading */
+  }
+
+  .team-info p {
+    font-size: 12px; /* Smaller paragraph text */
+  }
+}
+
+/* Community Engagement Section Styling */
+.community-engagement-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.community-engagement-section .header h2 {
+  font-size: 32px;
+  color: #2a2e38;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -35px;
+}
+
+.community-content {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.community-images {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.image-item {
+  width: 100%;
+  text-align: center;
+}
+
+.community-img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .community-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-item {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .header h2{
+    margin-top: -50px;
+  }
+}
+
+
+/* PROGRAMS AND SERVICES section */
+/* Programs Section Styling */
+.programs-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.programs-section .header h2 {
+  font-size: 32px;
+  color: #2a2e38;
+  margin-bottom: 20px;
+  margin-top: 75px;
+}
+
+.programs-section .header p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.program-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  position: relative; /* Set to relative to allow absolute positioning inside */
+  min-height: 140px; /* Reduced height initially */
+  overflow: hidden; /* Ensure smooth transition when expanding */
+  transition: all 0.3s ease; /* Smooth transition when expanding */
+}
+
+.program-card.expanded {
+  min-height: 240px; /* Increase height when expanded */
+}
+
+.program-card h3 {
+  font-size: 22px;
+  color: #C85107;
+  margin-bottom: 10px;
+}
+
+.program-card p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.more-info {
+  cursor: pointer;
+  color: #C85107;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.arrow {
+  font-size: 20px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.extra-info {
+  display: none;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.signup-btn {
+  display: inline-block;
+  background-color: #C85107;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  position: absolute; /* Make the button positioned within the card */
+  bottom: 20px; /* Push the button to the bottom */
+  right: 20px; /* Push the button to the right */
+}
+
+.signup-btn:hover {
+  background-color: #9F3F05;
+}
+
+/* Responsive Design for Programs Section */
+@media (max-width: 768px) {
+  .program-card {
+    padding: 15px;
+  }
+
+  .program-card h3 {
+    font-size: 20px;
+  }
+
+  .program-card p, .extra-info {
+    font-size: 14px;
+  }
+
+  .signup-btn {
+    padding: 8px 16px;
+  }
+}
+
+
+/* CONTACT SECTION */
+/* Contact Section Styling */
+.contact-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.contact-section .header h2 {
+  font-size: 32px;
+  color: #2a2e38;
+  margin-bottom: 20px;
+  margin-top: 70px;
+}
+
+.contact-section .header p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.contact-options {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.contact-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 30%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon {
+  font-size: 36px;
+  color: #C85107;
+  margin-bottom: 10px;
+}
+
+.contact-box h3 {
+  font-size: 20px;
+  color: #C85107;
+  margin-bottom: 10px;
+}
+
+.contact-btn {
+  display: inline-block;
+  background-color: #C85107;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.contact-btn:hover {
+  background-color: #9F3F05;
+}
+
+.hours-table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+.hours-table td {
+  padding: 8px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.hours-table td:first-child {
+  font-weight: bold;
+}
+
+
+.map-container {
+  margin-top: 40px;
+  width: 100%;
+}
+
+/* Responsive Design for Contact Section */
+@media (max-width: 768px) {
+  .contact-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+}
+
+
