@@ -1165,4 +1165,31 @@ nav div a:hover {
   }
 }
 
+/* Back to Top Button Styling */
+#backToTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  background-color: #C85107; /* Button color */
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 50px; /* Ensure width and height are equal for a perfect circle */
+  height: 50px;
+  border-radius: 50%; /* Circle shape */
+  text-align: center;
+  line-height: 50px; /* Center the arrow vertically */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slight shadow */
+  transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+#backToTopBtn:hover {
+  background-color: #9F3F05; /* Darker color on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
 
