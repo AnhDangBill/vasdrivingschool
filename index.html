@@ -273,6 +273,30 @@
   </div>
 </footer>
 
+<!-- Back to Top Button -->
+<button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">
+  &#8679;
+</button>
+
+<script>
+  // Show or hide the button based on scroll position
+  window.onscroll = function () { scrollFunction(); };
+
+  function scrollFunction() {
+    var backToTopBtn = document.getElementById("backToTopBtn");
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      backToTopBtn.style.display = "block"; // Show the button when scrolled down 500px
+    } else {
+      backToTopBtn.style.display = "none"; // Hide the button when near the top
+    }
+  }
+
+  // Scroll back to the top when the button is clicked
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+  }
+</script>
+
 
 <!-- script for slidesshow -->
 <script>
