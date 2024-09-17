@@ -4,215 +4,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang="en">VAS Driving School</title>
-    <title data-lang="vi" style="display: none;">Trường Dạy Lái Xe VAS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="finalstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="mainstyle.css" rel="stylesheet">
-    <script>
-
-        // Toggle FAQ visibility
-        function toggleFAQ(event) {
-            const faq = event.currentTarget;
-            const answer = faq.nextElementSibling;
-            const isVisible = answer.style.display === 'block';
-
-            document.querySelectorAll('.faq p').forEach(p => p.style.display = 'none');
-            if (!isVisible) {
-                answer.style.display = 'block';
-            }
-        }
-
-        // Event listeners for FAQ and modal
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.faq h3').forEach(faq => {
-                faq.addEventListener('click', toggleFAQ);
-            });
-
-            // Show the modal after 5 seconds
-            setTimeout(() => {
-                var modal = document.getElementById('myModal');
-                var span = document.getElementsByClassName('close')[0];
-
-                modal.style.display = 'block';
-
-                span.onclick = function () {
-                    modal.style.display = 'none';
-                }
-
-                window.onclick = function (event) {
-                    if (event.target == modal) {
-                        modal.style.display = 'none';
-                    }
-                }
-            }, 5000);
-        });
-        function switchLanguage(lang) {
-            // Store the language preference in local storage
-            localStorage.setItem('preferredLanguage', lang);
-
-            // Apply the language setting to the page
-            var elements = document.querySelectorAll('[data-lang]');
-            elements.forEach(element => {
-                element.style.display = 'none';
-            });
-            var selectedLangElements = document.querySelectorAll('[data-lang="' + lang + '"]');
-            selectedLangElements.forEach(element => {
-                element.style.display = 'block';
-            });
-            document.title = document.querySelector('title[data-lang="' + lang + '"]').textContent;
-        }
-
-        function applyStoredLanguage() {
-            // Get the preferred language from local storage
-            var preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
-            switchLanguage(preferredLanguage);
-        }
-
-        // Apply the stored language when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            applyStoredLanguage();
-
-            // Add event listeners for language switch buttons
-            document.querySelectorAll('.language-switcher button').forEach(button => {
-                button.addEventListener('click', (event) => {
-                    var lang = event.target.getAttribute('onclick').split("'")[1];
-                    switchLanguage(lang);
-                });
-            });
-        });
-    </script>
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <title>Programs & Services - VAS Driving School</title>
 </head>
 
-<body onload="switchLanguage('en');">
-    <header>
-        <div class="logo">
+<body>
+    <!-- Navigation (Same as other pages) -->
+    <nav>
+        <div class="logo-container">
             <a href="index.html">
-                <img src="logo.jpg" alt="VAS Driving School Logo" style="height: 50px;">
+                <img class="logo" src="logo.png" alt="VAS Logo">
             </a>
         </div>
-        <div class="title">
-            <h1 data-lang="en">Programs and Services</h1>
-            <h1 data-lang="vi" style="display: none;">Chương Trình Và Dịch Vụ</h1>
+        <div class="menu-links" id="menuLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="programs.html">Programs and Services</a>
+            <a href="contact.html">Contact Us</a>
+            <div class="language-switcher">
+                <a href="?lang=en" class="lang-btn">English</a>
+                <a href="?lang=vi" class="lang-btn">Tiếng Việt</a>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" data-lang="en">Home</a></li>
-                <li><a href="index.html" data-lang="vi" style="display: none;">Trang Chủ</a></li>
-                <li><a href="about.html" data-lang="en">About Us</a></li>
-                <li><a href="about.html" data-lang="vi" style="display: none;">Về Chúng Tôi</a></li>
-                <li><a href="programs.html" data-lang="en">Programs and Services</a></li>
-                <li><a href="programs.html" data-lang="vi" style="display: none;">Chương Trình Và Dịch Vụ</a></li>
-                <li><a href="contacts.html" data-lang="en">Contact Us</a></li>
-                <li><a href="contacts.html" data-lang="vi" style="display: none;">Liên Hệ</a></li>
-                <li><a href="signup.html" data-lang="en">Sign Up</a></li>
-                <li><a href="signup.html" data-lang="vi" style="display: none;">Đăng Ký</a></li>
-            </ul>
-        </nav>
-        <div class="language-switcher">
-            <button onclick="switchLanguage('en');">English</button>
-            <button onclick="switchLanguage('vi');">Vietnamese</button>
+        <div class="three-bars" id="threeBars" onclick="toggleMenu()">
+            &#9776;
         </div>
-    </header>
-    <main>
-        <section class="section">
-            <div class="service" data-lang="en">
-                <h2><i class="fas fa-calendar-alt"></i> Full 36-Hour Class</h2>
-                <p>30 hours of classroom instruction and 6 hours of behind-the-wheel training. Cost: $350.</p>
-                <ul>
-                    <li>Comprehensive curriculum covering all aspects of safe driving</li>
-                    <li>Interactive classroom sessions with experienced instructors</li>
-                    <li>Hands-on behind-the-wheel training</li>
-                    <li>Mock driving tests to prepare you for the real exam</li>
-                </ul>
-                <button onclick="window.location.href='signup.html'">Sign Up Now</button>
-            </div>
-            <div class="service" data-lang="vi" style="display: none;">
-                <h2><i class="fas fa-calendar-alt"></i> Lớp Học 36 Giờ Đầy Đủ</h2>
-                <p>30 giờ học trên lớp và 6 giờ học lái xe. Chi phí: $350.</p>
-                <ul>
-                    <li>Chương trình giảng dạy toàn diện bao gồm mọi khía cạnh của việc lái xe an toàn</li>
-                    <li>Buổi học trên lớp tương tác với các giảng viên giàu kinh nghiệm</li>
-                    <li>Đào tạo thực hành lái xe</li>
-                    <li>Bài kiểm tra lái xe giả để chuẩn bị cho kỳ thi thực tế</li>
-                </ul>
-                <button onclick="window.location.href='signup.html'">Đăng Ký Ngay</button>
-            </div>
-            <div class="service" data-lang="en">
-                <h2><i class="fas fa-hourglass-half"></i> 3 Hours Drug and Alcohol Class</h2>
-                <p>Required class for new drivers. Cost: $150.</p>
-                <ul>
-                    <li>Understanding the effects of drugs and alcohol on driving</li>
-                    <li>Recognizing signs of impairment</li>
-                    <li>Strategies for safe driving</li>
-                    <li>Certification provided upon completion</li>
-                </ul>
-                <button onclick="window.location.href='signup.html'">Sign Up Now</button>
-            </div>
-            <div class="service" data-lang="vi" style="display: none;">
-                <h2><i class="fas fa-hourglass-half"></i> Lớp 3 Giờ về Ma Túy và Rượu</h2>
-                <p>Lớp học bắt buộc cho người lái xe mới. Chi phí: $150.</p>
-                <ul>
-                    <li>Hiểu biết về tác động của ma túy và rượu khi lái xe</li>
-                    <li>Nhận biết dấu hiệu suy giảm</li>
-                    <li>Chiến lược lái xe an toàn</li>
-                    <li>Cấp giấy chứng nhận sau khi hoàn thành</li>
-                </ul>
-                <button onclick="window.location.href='signup.html'">Đăng Ký Ngay</button>
-            </div>
-            <div class="service" data-lang="en">
-                <h2><i class="fas fa-car"></i> Driver Practice</h2>
-                <p>Flexible hours depending on the customer's needs. Minimum of 2 hours per session. Cost: $150 per session.</p>
-                <ul>
-                    <li>One-on-one driving practice with a certified instructor</li>
-                    <li>Customizable practice routes based on your comfort level</li>
-                    <li>Focus on specific skills like parallel parking, highway driving, and more</li>
-                    <li>Receive detailed feedback and tips for improvement</li>
-                </ul>
-                <button onclick="window.location.href='signup.html'">Sign Up Now</button>
-            </div>
-            <div class="service" data-lang="vi" style="display: none;">
-                <h2><i class="fas fa-car"></i> Thực Hành Lái Xe</h2>
-                <p>Giờ giấc linh hoạt tùy theo nhu cầu của khách hàng. Tối thiểu 2 giờ mỗi buổi. Chi phí: $150 mỗi buổi.</p>
-                <ul>
-                    <li>Thực hành lái xe một kèm một với giảng viên được chứng nhận</li>
-                    <li>Lộ trình thực hành có thể tùy chỉnh dựa trên mức độ thoải mái của bạn</li>
-                    <li>Tập trung vào các kỹ năng cụ thể như đỗ xe song song, lái xe trên xa lộ và nhiều hơn nữa</li>
-                    <li>Nhận phản hồi chi tiết và mẹo cải thiện</li>
-                </ul>
-                <button onclick="window.location.href='signup.html'">Đăng Ký Ngay</button>
-            </div>
-            <div class="service" data-lang="en">
-                <h2><i class="fas fa-key"></i> Car Rental for Driving Test</h2>
-                <p>Car rental available for driving tests. Price varies based on distance. Cost: Starting at $100.</p>
-                <ul>
-                    <li>Well-maintained vehicles ready for driving tests</li>
-                    <li>Flexible rental periods to accommodate test schedules</li>
-                    <li>Includes insurance and necessary documentation</li>
-                    <li>Convenient pickup and drop-off options</li>
-                </ul>
-                <button onclick="window.location.href='signup.html'">Sign Up Now</button>
-            </div>
-            <div class="service" data-lang="vi" style="display: none;">
-                <h2><i class="fas fa-key"></i> Cho Thuê Xe Thi Lái</h2>
-                <p>Cho thuê xe để thi lái. Giá cả thay đổi tùy theo khoảng cách. Chi phí: Bắt đầu từ $100.</p>
-                <ul>
-                    <li>Phương tiện được bảo trì tốt sẵn sàng cho các kỳ thi lái xe</li>
-                    <li>Thời gian thuê linh hoạt để phù hợp với lịch thi</li>
-                    <li>Bao gồm bảo hiểm và tài liệu cần thiết</li>
-                    <li>Tùy chọn đón và trả xe tiện lợi</li>
-                </ul>
-                <button onclick="window.location.href='signup.html'">Đăng Ký Ngay</button>
-            </div>
-        </section>
-    </main>
-    
+    </nav>
 
+    <!-- Programs & Services Section -->
+    <section class="programs-section">
+        <div class="header">
+            <h2>Our Programs & Services</h2>
+            <p>At VAS Driving School, we offer a range of programs to help you gain the skills and confidence needed to
+                drive safely. Below are the services we provide:</p>
+        </div>
 
-    <footer>
-        <p>Contact us: <a href="mailto:info@vasdrivingschool.net">info@vasdrivingschool.net</a> | 12621 Old Columbia
-            Pike, Silver Spring, MD 20904 | Phone: 240-688-5597</p>
+        <!-- Program 1: Full 36-Hour Driving Course -->
+        <div class="program-card">
+            <h3>Full 36-Hour Driving Course</h3>
+            <p>Our comprehensive 36-hour course covers classroom instruction and behind-the-wheel training to prepare
+                you for the driving test.</p>
+            <div class="more-info" onclick="toggleInfo(this)">
+                <span class="arrow">&#9660;</span> Learn more
+            </div>
+            <div class="extra-info">
+                <p>This program is designed for beginners and those who need to refresh their driving skills. It
+                    includes 30 hours of classroom instruction and 6 hours of behind-the-wheel training. By the end of
+                    the course, you’ll feel confident to take the MVA test.</p>
+            </div>
+            <a href="https://square.link/u/l9ywQ4g2" class="signup-btn">Sign Up</a>
+        </div>
+
+        <!-- Program 2: 3-Hour Drug & Alcohol Class -->
+        <div class="program-card">
+            <h3>3-Hour Drug & Alcohol Class</h3>
+            <p>This mandatory course teaches the impact of drugs and alcohol on driving and is required for new drivers
+                in Maryland.</p>
+            <div class="more-info" onclick="toggleInfo(this)">
+                <span class="arrow">&#9660;</span> Learn more
+            </div>
+            <div class="extra-info">
+                <p>This 3-hour class is essential for anyone obtaining a driver's license for the first time in
+                    Maryland. It covers how drugs and alcohol impair your ability to drive, Maryland’s laws on impaired
+                    driving, and the consequences of driving under the influence.</p>
+            </div>
+            <a href="https://square.link/u/raaVS8L3" class="signup-btn">Sign Up</a>
+        </div>
+
+        <!-- Program 3: Driver Practice -->
+        <div class="program-card">
+            <h3>Driver Practice</h3>
+            <p>Perfect for drivers needing extra practice. Get more time behind the wheel with a certified instructor.
+            </p>
+            <div class="more-info" onclick="toggleInfo(this)">
+                <span class="arrow">&#9660;</span> Learn more
+            </div>
+            <div class="extra-info">
+                <p>If you need additional time practicing on the road, our driver practice sessions are perfect. Each
+                    session is tailored to your specific needs, helping you improve your driving skills and build
+                    confidence on the road.</p>
+            </div>
+            <a href="https://square.link/u/aJWD4fta" class="signup-btn">Sign Up</a>
+        </div>
+
+        <!-- Program 4: Car Rental for MVA Test -->
+        <div class="program-card">
+            <h3>Car Rental for MVA Test</h3>
+            <p>We offer reliable, fully-insured vehicles for your driving test at the MVA.</p>
+            <div class="more-info" onclick="toggleInfo(this)">
+                <span class="arrow">&#9660;</span> Learn more
+            </div>
+            <div class="extra-info">
+                <p>Need a car for your driving test? We provide safe and reliable vehicles that meet MVA requirements.
+                    Rent a car from us for your test and get peace of mind knowing you're driving a vehicle that is in
+                    excellent condition and insured for your exam.</p>
+            </div>
+            <a href="https://square.link/u/HIHBypy2" class="signup-btn">Sign Up</a>
+        </div>
+    </section>
+
+    <!-- Footer (Same as other pages) -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Left: About Section -->
+            <div class="footer-about">
+                <h3>About VAS Driving School</h3>
+                <p>VAS Driving School is committed to providing quality driving instruction and helping students become
+                    safe, confident drivers.</p>
+            </div>
+
+            <!-- Footer Middle: Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Right: Contact Information -->
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@vasdrivingschool.net</p>
+                <p>Phone: +1 (240) 688-5597</p>
+                <p>Address: 12621 Old Columbia Pike, Silver Spring MD 20904</p>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 VAS Driving School. All Rights Reserved.</p>
+        </div>
     </footer>
+
 </body>
+
+<!-- script for three bar navigation -->
+<script>
+    function toggleMenu() {
+        var menuLinks = document.getElementById('menuLinks');
+        menuLinks.classList.toggle('active');
+    }
+</script>
+
+<!-- Script to toggle extra information -->
+<script>
+    function toggleInfo(element) {
+        const extraInfo = element.nextElementSibling;
+        const arrow = element.querySelector('.arrow');
+        if (extraInfo.style.display === 'block') {
+            extraInfo.style.display = 'none';
+            arrow.innerHTML = '&#9660;'; // Arrow down
+        } else {
+            extraInfo.style.display = 'block';
+            arrow.innerHTML = '&#9650;'; // Arrow up
+        }
+    }
+</script>
+<!-- Script to toggle extra information and adjust card size -->
+<script>
+    function toggleInfo(element) {
+        const extraInfo = element.nextElementSibling;
+        const card = element.closest('.program-card'); // Get the parent card
+        const arrow = element.querySelector('.arrow');
+
+        if (extraInfo.style.display === 'block') {
+            extraInfo.style.display = 'none';
+            arrow.innerHTML = '&#9660;'; // Arrow down
+            card.classList.remove('expanded'); // Remove expanded class
+        } else {
+            extraInfo.style.display = 'block';
+            arrow.innerHTML = '&#9650;'; // Arrow up
+            card.classList.add('expanded'); // Add expanded class
+        }
+    }
+</script>
 
 </html>
