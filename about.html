@@ -2,220 +2,234 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang="en">VAS Driving School</title>
-    <title data-lang="vi" style="display: none;">Trường Dạy Lái Xe VAS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="mainstyle.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <script>
-        
-        // Toggle FAQ visibility
-        function toggleFAQ(event) {
-            const faq = event.currentTarget;
-            const answer = faq.nextElementSibling;
-            const isVisible = answer.style.display === 'block';
-
-            document.querySelectorAll('.faq p').forEach(p => p.style.display = 'none');
-            if (!isVisible) {
-                answer.style.display = 'block';
-            }
-        }
-
-        // Event listeners for FAQ and modal
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.faq h3').forEach(faq => {
-                faq.addEventListener('click', toggleFAQ);
-            });
-
-            // Show the modal after 5 seconds
-            setTimeout(() => {
-                var modal = document.getElementById('myModal');
-                var span = document.getElementsByClassName('close')[0];
-
-                modal.style.display = 'block';
-
-                span.onclick = function () {
-                    modal.style.display = 'none';
-                }
-
-                window.onclick = function (event) {
-                    if (event.target == modal) {
-                        modal.style.display = 'none';
-                    }
-                }
-            }, 5000);
-        });
-        function switchLanguage(lang) {
-            // Store the language preference in local storage
-            localStorage.setItem('preferredLanguage', lang);
-            
-            // Apply the language setting to the page
-            var elements = document.querySelectorAll('[data-lang]');
-            elements.forEach(element => {
-                element.style.display = 'none';
-            });
-            var selectedLangElements = document.querySelectorAll('[data-lang="' + lang + '"]');
-            selectedLangElements.forEach(element => {
-                element.style.display = 'block';
-            });
-            document.title = document.querySelector('title[data-lang="' + lang + '"]').textContent;
-        }
-
-        function applyStoredLanguage() {
-            // Get the preferred language from local storage
-            var preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
-            switchLanguage(preferredLanguage);
-        }
-
-        // Apply the stored language when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            applyStoredLanguage();
-
-            // Add event listeners for language switch buttons
-            document.querySelectorAll('.language-switcher button').forEach(button => {
-                button.addEventListener('click', (event) => {
-                    var lang = event.target.getAttribute('onclick').split("'")[1];
-                    switchLanguage(lang);
-                });
-            });
-        });
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="finalstyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
+  <link rel="icon" href="icon.ico" type="image/x-icon">
+  <title data-lang="en">About Us - VAS Driving School</title>
+  <title data-lang="vi" style="display: none;">Trường Dạy Lái Xe VAS</title>
 </head>
 
-<body onload="switchLanguage('en');">
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo.jpg" alt="VAS Driving School Logo" style="height: 50px;">
-            </a>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo-container">
+      <a href="index.html">
+        <img class="logo" src="logo.png" alt="VAS Logo">
+      </a>
+    </div>
+    <div class="menu-links" id="menuLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="programs.html">Programs and Services</a>
+      <a href="contact.html">Contact Us</a>
+      <div class="language-switcher">
+        <a href="?lang=en" class="lang-btn">English</a>
+        <a href="?lang=vi" class="lang-btn">Tiếng Việt</a>
+      </div>
+    </div>
+    <!-- Three-bar icon for dropdown menu -->
+    <div class="three-bars" id="threeBars" onclick="toggleMenu()">
+      &#9776;
+    </div>
+  </nav>
+
+
+  <!-- About Us Section -->
+  <section class="about-us-section">
+    <div class="header">
+      <h2>About VAS Driving School</h2>
+    </div>
+
+    <div class="about-us-content">
+      <div class="about-us-text">
+        <p>
+          As the first Vietnamese American driving school in this area, welcome to
+          VAS Driving School. We are committed to providing top-quality instruction
+          that combines safety, skill, and confidence on the road. Our driving
+          school caters to all levels of drivers, from beginners eager to obtain
+          their first license to experienced drivers looking to refine their skills.
+          Your journey to driving success starts here!
+        </p>
+      </div>
+
+      <!-- About Us Image -->
+      <div class="about-us-image">
+        <img src="about us.png" alt="VAS Driving School" class="about-us-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Our Team Section (similar to Testimonial section) -->
+  <section class="team-section">
+    <div class="header">
+      <h2>Meet Our Team</h2>
+    </div>
+
+    <div class="team-content">
+      <!-- Team Member 1 -->
+      <div class="team-member">
+        <img src="Tho Tran.jpg" alt="Tho Tran - Owner/Instructor" class="team-img">
+        <div class="team-info">
+          <h3>Tho Tran</h3>
+          <p>Owner/Instructor</p>
+          <p>As the owner and lead instructor, Tho has over 10 years of experience, helping drivers build confidence
+            behind the wheel. Her passion for teaching ensures each student becomes a safe and responsible driver.</p>
         </div>
+      </div>
 
-        <div class="title">
-            <h1 data-lang="en">About VAS Driving School</h1>
-            <h1 data-lang="vi" style="display: none;">Về Trường Dạy Lái Xe VAS</h1>
+      <!-- Team Member 2 -->
+      <div class="team-member">
+        <img src="AnhDang.jpg" alt="Anh Dang - Executive Director" class="team-img">
+        <div class="team-info">
+          <h3>Anh Dang</h3>
+          <p>Executive Director</p>
+          <p>As the Executive Director, Anh oversees the driving school's operations and ensures a smooth, enjoyable
+            experience for all students. Anh's energetic approach brings fun and engagement to every lesson.</p>
         </div>
+      </div>
 
-        <nav>
-            <ul>
-                <li><a href="index.html" data-lang="en">Home</a></li>
-                <li><a href="index.html" data-lang="vi" style="display: none;">Trang Chủ</a></li>
-                <li><a href="about.html" data-lang="en">About Us</a></li>
-                <li><a href="about.html" data-lang="vi" style="display: none;">Về Chúng Tôi</a></li>
-                <li><a href="programs.html" data-lang="en">Programs and Services</a></li>
-                <li><a href="programs.html" data-lang="vi" style="display: none;">Chương Trình Và Dịch Vụ</a></li>
-                <li><a href="contacts.html" data-lang="en">Contact Us</a></li>
-                <li><a href="contacts.html" data-lang="vi" style="display: none;">Liên Hệ</a></li>
-                <li><a href="signup.html" data-lang="en">Sign Up</a></li>
-                <li><a href="signup.html" data-lang="vi" style="display: none;">Đăng Ký</a></li>
-            </ul>
-        </nav>
-
-        <div class="language-switcher">
-            <button onclick="switchLanguage('en');">English</button>
-            <button onclick="switchLanguage('vi');">Vietnamese</button>
+      <!-- Team Member 3 -->
+      <div class="team-member">
+        <img src="Minh Tran.jpg" alt="Minh Tran - Marketing Manager" class="team-img">
+        <div class="team-info">
+          <h3>Minh Tran</h3>
+          <p>Marketing Manager</p>
+          <p>Minh is not only the Marketing Manager but also the friendly voice behind the phone, answering all incoming
+            calls. She ensures that every inquiry is handled with care, while also managing the school’s promotional
+            efforts and community outreach.</p>
         </div>
-    </header>
-    <main>
-        <section class="welcome-section" data-lang="en">
-            <h2>Welcome</h2>
-            <p>As the first Vietnamese American driving school in the area, VAS Driving School prides itself on offering top-quality instruction that combines safety, skill, and confidence on the road. Our experienced instructors are dedicated to helping all levels of drivers, from beginners to those seeking to polish their driving skills.</p>
-            <p>Founded in 2024, our school is deeply committed to ensuring each student succeeds, with customized programs that address the unique needs of our community, focusing on both theory and practical driving skills.</p>
-        </section>
-        <section class="welcome-section" data-lang="vi" style="display: none;">
-            <h2>Chào Mừng</h2>
-            <p>Là trường dạy lái xe Mỹ gốc Việt đầu tiên trong khu vực, Trường Dạy Lái Xe VAS tự hào cung cấp dịch vụ giảng dạy chất lượng cao kết hợp an toàn, kỹ năng và tự tin trên đường. Các giáo viên của chúng tôi, với kinh nghiệm dày dặn, cam kết hỗ trợ mọi học viên từ người mới bắt đầu đến những người muốn cải thiện kỹ năng lái xe của mình.</p>
-            <p>Được thành lập vào năm 2024, trường chúng tôi cam kết đảm bảo thành công của mỗi học viên, với các chương trình được thiết kế riêng biệt nhằm đáp ứng nhu cầu đặc thù của cộng đồng, tập trung vào cả lý thuyết và kỹ năng lái xe thực tế.</p>
-        </section>
-        <section class="section team-section">
-            <div data-lang="en">
-                <h2 class="section-title">Our Team</h2>
-                <p>Our team of certified instructors brings a wealth of experience and dedication to each driving lesson. They are passionate about teaching and committed to the success of each student.</p>
-            </div>
-            <div data-lang="vi" style="display: none;">
-                <h2 class="section-title">Đội Ngũ Của Chúng Tôi</h2>
-                <p>Đội ngũ giảng viên được chứng nhận của chúng tôi mang đến nhiều kinh nghiệm và sự tận tâm cho mỗi buổi học lái xe. Họ đam mê giảng dạy và cam kết với sự thành công của từng học viên.</p>
-            </div>
-        </section>
-        <section class="section facilities-section">
-            <div data-lang="en">
-                <h2 class="section-title">Our Facilities</h2>
-                <p>VAS Driving School boasts state-of-the-art facilities, including modern classrooms and well-maintained vehicles to ensure a comfortable and effective learning environment.</p>
-            </div>
-            <div data-lang="vi" style="display: none;">
-                <h2 class="section-title">Cơ Sở Vật Chất Của Chúng Tôi</h2>
-                <p>Trường Dạy Lái Xe VAS có cơ sở vật chất hiện đại, bao gồm các phòng học hiện đại và các phương tiện được bảo trì tốt để đảm bảo môi trường học tập thoải mái và hiệu quả.</p>
-            </div>
-        </section>
+      </div>
 
-        <div class="section student-success" data-lang="en">
-            <h2 class="section-title">Student Success Stories</h2>
-            <div class="success-story">
-                <img src="HBN.png" alt="Student 1">
-                <div class="story-content">
-                    <h3>Huy Bảo Nguyễn</h3>
-                    <p>Congratulations to Huy Bao Nguyen, one of the first students of VAS Driving School, for earning his driver's license! 🎉
-                        
-                    Huy Bao, a young student who arrived in the U.S. just ten months ago and had never driven before, 
-                    found VAS Driving School early on. Thanks to the comprehensive guidance and structured 36-hour driving course, 
-                    he gained a solid foundation in traffic laws and practical driving skills. With dedication and hard work, 
-                    Huy Bao completed the course in just two weeks and successfully passed his driving test today.</p>
-                </div>
-            </div>
-            <div class="success-story">
-                <img src="DTN.png" alt="Student 2">
-                <div class="story-content">
-                    <h3>Duy Thanh Nguyễn</h3>
-                    <p>Journey to Get a Driver's License Within a Month of Moving to the U.S!
 
-                    Duy Thanh, who already had a driver's license in Vietnam, came to the U.S. and was 
-                    guided by the lovely Truc Nguyen to VAS Driving School to handle the paperwork for 
-                    his driving test. Despite not knowing English, the school provided him with Vietnamese 
-                    study materials and instructions on using an app to practice on the computer. The next 
-                    day, he passed the theoretical test with ease using a school-issued alcohol certificate. 
-                    The following week, the school staff scheduled his skills test, picked him up from home, 
-                    helped him familiarize himself with the test area, and acted as his translator during the test. 
-                    Despite the strict examiner, he passed the test smoothly. Overjoyed, he shared the news with 
-                    his friends and family back in Vietnam. Having a driver's license quickly made his new life in 
-                    the U.S. much easier. Congratulations to him! 💐🍀🍾</p>
-                </div>
-            </div>
-        </div>
-        <div class="section student-success" data-lang="vi" style="display: none;">
-            <h2>Câu Chuyện Thành Công Của Học Viên</h2>
-            <div class="success-story">
-                <img src="HBN.png" alt="Student 1">
-                <div class="story-content">
-                    <h3>Huy Bảo Nguyễn</h3>
-                    <p>Chúc mừng Huy Bảo Nguyễn, một trong những học sinh đầu tiên của Trường Dạy Lái Xe VAS, đã đạt được bằng lái xe! 🎉
+    </div>
+  </section>
 
-                    Huy Bảo, một học sinh trẻ tuổi mới đến Mỹ cách đây 10 tháng và chưa từng lái xe trước đây, 
-                    đã tìm đến Trường Dạy Lái Xe VAS từ sớm. Nhờ vào sự hướng dẫn toàn diện và khóa học lái xe 36 
-                    giờ có cấu trúc, anh đã có được nền tảng vững chắc về luật giao thông và kỹ năng lái xe thực tế. 
-                    Với sự tận tâm và chăm chỉ, Huy Bảo đã hoàn thành khóa học chỉ trong hai tuần và đã thi đậu 
-                    bằng lái xe thành công ngày hôm nay.</p>
-                </div>
-            </div>
-            <div class="success-story">
-                <img src="DTN.png" alt="Student 2">
-                <div class="story-content">
-                    <h3>Duy Thanh Nguyễn</h3>
-                    <p>HÀNH TRÌNH LẤY BẰNG LÁI XE CHỈ TRONG 1 THÁNG ĐẾN MỸ ĐỊNH CƯ
-                    Anh Duy Thanh đã có bằng lái xe ở Việt Nam. Khi sang Mỹ, được chị Truc Nguyen dẫn đến VAS Driving School 
-                        để làm thủ tục thi bằng lái. Vì không biết tiếng Anh, trường đã cung cấp tài liệu học lý thuyết bằng tiếng 
-                        Việt và hướng dẫn sử dụng ứng dụng để luyện tập. Ngày hôm sau, anh thi lý thuyết và đậu ngay. Tuần sau, nhân 
-                        viên trường đặt hẹn thi kỹ năng, đón anh tại nhà và hỗ trợ làm quen địa hình. Kết quả, anh đậu bằng lái, giúp 
-                        cuộc sống mới ở Mỹ dễ dàng hơn. Chúc mừng anh! 💐🍀🍾</p>
-                </div>
-            </div>
-        </div>
-        
-    </main>
-    <footer>
-        <p>Contact us: <a href="mailto:info@vasdrivingschool.net">info@vasdrivingschool.net</a> | 12621 Old Columbia Pike, Silver Spring, MD 20904 | Phone: 240-688-5597</p>
-    </footer>
+  <!-- Community Engagement Section -->
+  <section class="community-engagement-section">
+    <div class="header">
+      <h2>Community Engagement</h2>
+    </div>
+
+    <div class="community-content">
+      <p>VAS Driving School is proud to be an active member of our local community.
+        Recently, we were a key sponsor at the Mid-Autumn Festival, a beloved
+        celebration for many families in our area. We were honored to sponsor the
+        lion dance team, bringing joy and excitement to the festival, and we also
+        had our own table where we connected with the community and shared
+        information about our services. It was a wonderful opportunity to engage
+        with the community, and we look forward to continuing our involvement in
+        future events. Check out some highlights from the festival below!</p>
+    </div>
+
+    <div class="community-images">
+      <div class="image-item">
+        <img src="Driving School4.png" alt="VAS Driving School Table at Mid-Autumn Festival" class="community-img">
+      </div>
+    </div>
+  </section>
+
+
+
 </body>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Footer Left: About Section -->
+    <div class="footer-about">
+      <h3>About VAS Driving School</h3>
+      <p>VAS Driving School is committed to providing quality driving instruction and helping students become safe,
+        confident drivers.</p>
+    </div>
+
+    <!-- Footer Middle: Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Footer Right: Contact Information -->
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>Email: info@vasdrivingschool.net</p>
+      <p>Phone: +1 (240) 688-5597</p>
+      <p>Address: 12621 Old Columbia Pike, Silver Spring MD 20904</p>
+    </div>
+
+  </div>
+
+  <!-- Copyright Section -->
+  <div class="footer-bottom">
+    <p>&copy; 2024 VAS Driving School. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+<script>
+  <!-- script for three bar navigation -->
+  function toggleMenu() {
+    var menuLinks = document.getElementById('menuLinks');
+    menuLinks.classList.toggle('active');
+  }
+</script>
+<!-- script for slidesshow -->
+<script>
+  var slideIndex = 0;
+  var slides = document.getElementsByClassName("mySlides");
+  var slidesWrapper = document.querySelector('.slides-wrapper');
+  var autoSlideInterval;
+
+  showSlides(slideIndex);
+
+  // Show the current slide
+  function showSlides(n) {
+    var totalSlides = slides.length;
+
+    // Ensure slide index is within bounds
+    if (n >= totalSlides) {
+      slideIndex = 0;  // Loop back to the first slide when reaching the last slide
+    } else if (n < 0) {
+      slideIndex = totalSlides - 1;  // Loop to the last slide if navigating backwards past the first slide
+    }
+
+    // Calculate the distance to translate the slides
+    var translateValue = -(slideIndex * 100); // Each slide moves by 100% of the viewport
+    slidesWrapper.style.transform = 'translateX(' + translateValue + 'vw)'; // Slide the wrapper
+  }
+
+  // Next/previous controls
+  function plusSlides(n) {
+    clearInterval(autoSlideInterval); // Stop the auto-sliding temporarily
+    slideIndex += n;
+    showSlides(slideIndex);
+    startAutoSlide(); // Restart auto-sliding after manual control
+  }
+
+  // Automatically move to the next slide every 5 seconds
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(function () {
+      plusSlides(1); // Move to the next slide
+    }, 5000);  // Change slide every 5 seconds
+  }
+
+  // Start the automatic sliding
+  startAutoSlide();
+</script>
 
 </html>
