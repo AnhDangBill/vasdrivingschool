@@ -233,6 +233,30 @@
       <div class="label">Students Trained</div>
     </div>
   </div>
+
+   <!-- Chatbot Integration -->
+<div class="chatbot-container" id="chatbot" style="display: none;">
+  <div class="chat-header">
+      <img src="chat box.png" alt="VAS Logo" class="chatbot-logo">
+      <button onclick="toggleChat()">X</button>
+  </div>
+  <div class="chat-body" id="chatBody">
+      <div id="chatOutput"></div>
+  </div>
+  <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type your question..." onkeypress="handleKeyPress(event)">
+      <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<!-- Chatbot Trigger Button with Image -->
+<button id="chatbotTrigger" onclick="toggleChat()">
+  <img src="Chat with us.png" alt="Chat Icon" class="chat-icon">
+</button>
+
+<!-- Script to handle chatbot functionality -->
+<script src="chatbot.js"></script>
+
 </body>
 
 <footer class="footer">
