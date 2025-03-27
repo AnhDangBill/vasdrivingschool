@@ -108,7 +108,8 @@
         <p>Don’t miss your chance to join our next driving class! Spots are limited, and they’re filling up quickly.
           Hit the "REGISTER NOW" button to register.
         </p>
-      </div>
+        <div class="countdown" id="countdown-april21"></div>
+      </div>      
       <div class="class-image">
         <img src="April 21, 2025.png" alt="April 21st, 2025 Class"
           onclick="window.location.href='https://square.link/u/l9ywQ4g2'" />
@@ -348,6 +349,37 @@
       closePopup();
     };
   });
+</script>
+
+<!-- event countdown -->
+<script>
+  function startCountdown(id, targetDateStr) {
+    const countdownElement = document.getElementById(id);
+    const targetDate = new Date(targetDateStr).getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        countdownElement.innerHTML = "Class is starting soon!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `Starts in ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+
+  // 👇 Add more countdowns here if needed
+  startCountdown("countdown-april21", "April 21, 2025 09:00:00");
 </script>
 
 
