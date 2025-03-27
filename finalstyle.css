@@ -312,6 +312,13 @@ nav div a:hover {
   /* Ensure no padding issues */
 }
 
+.countdown {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #C85107; /* or any highlight color */
+}
+
 /* Flexbox Adjustments */
 .event-card .class-info {
   flex: 2;
