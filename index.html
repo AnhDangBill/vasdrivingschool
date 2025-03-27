@@ -15,6 +15,17 @@
 </head>
 
 <body>
+    <!-- Popup Video Ad -->
+    <div class="popup-overlay" id="popupAd">
+      <div class="popup-content">
+        <button class="close-btn" onclick="closePopup()">×</button>
+        <video id="popupVideo" controls autoplay muted playsinline>
+          <source src="VAS Driving School AD.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
   <!-- Navigation -->
   <nav>
     <div class="logo-container">
@@ -313,6 +324,30 @@
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
   }
+</script>
+
+<!-- Script for pop up ad -->
+<script>
+  window.onload = function () {
+    setTimeout(function () {
+      document.getElementById("popupAd").style.display = "flex";
+    }, 1000); // show after 1 second
+  };
+
+  function closePopup() {
+    const popup = document.getElementById("popupAd");
+    const video = document.getElementById("popupVideo");
+    popup.style.display = "none";
+    video.pause();
+  }
+
+  // Optional: Auto-close when video ends
+  document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("popupVideo");
+    video.onended = () => {
+      closePopup();
+    };
+  });
 </script>
 
 
